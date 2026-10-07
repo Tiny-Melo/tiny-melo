@@ -1347,3 +1347,6 @@ html[data-theme="dark"] .about-dog img { mix-blend-mode: normal; border-radius: 
 .christopher-portrait figcaption { display: flex; justify-content: space-between; gap: 12px; font-size: 9px; color: var(--muted); margin-top: 16px; }
 @media (max-width: 1050px) { .about-hero-layout { gap: 35px; grid-template-columns: 1.4fr 1fr; } .about-hero-layout h1 { font-size: clamp(43px, 5.2vw, 65px); letter-spacing: -3px; } .about-hero-layout .about-intro > p { font-size: 15px; } }
 @media (max-width: 700px) { .about-hero-layout { grid-template-columns: 1fr; gap: 42px; } .about-hero-layout h1 { font-size: clamp(39px, 10.5vw, 65px); letter-spacing: -2.8px; } .about-hero-layout .about-intro > p { font-size: 16px; } .christopher-portrait { width: 100%; max-width: 440px; } .about-hero-layout .about-intro-actions { gap: 20px; } }
+
+/* SVG arrows stay monochrome across iOS and other platforms. */
+.arrow-icon { display: inline-block; width: 1em; height: 1em; flex-shrink: 0; vertical-align: -0.12em; }
