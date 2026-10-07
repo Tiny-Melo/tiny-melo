@@ -1,0 +1,21 @@
+{
+  "name": "tiny-melo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --bun astro dev --host 0.0.0.0 --port 4321",
+    "check": "bun --bun astro check",
+    "build": "bun --bun astro build",
+    "preview": "bun --bun astro preview"
+  },
+  "dependencies": {
+    "astro": "latest",
+    "gsap": "latest",
+    "@fontsource/geist": "latest"
+  },
+  "devDependencies": {
+    "@astrojs/check": "latest",
+    "typescript": "^6.0.0"
+  }
+}
