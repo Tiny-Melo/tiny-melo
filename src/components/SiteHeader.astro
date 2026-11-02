@@ -8,28 +8,25 @@ const { active } = Astro.props;
 
 <header class="island-header">
   <div class="island-notch">
-    <!-- Left S-Curve Cap: Seamless transition from ceiling to floor -->
+    <!-- Left Top Ear Flare: Concave ceiling transition -->
     <svg
-      class="island-cap island-cap-left"
-      width="36"
-      height="48"
-      viewBox="0 0 36 48"
-      preserveAspectRatio="none"
+      class="island-ear island-ear-left"
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
       aria-hidden="true"
     >
+      <path d="M 0 0 C 12 0, 22 10, 22 22 L 22 0 Z" fill="#000000"></path>
+      <line x1="21.5" y1="0" x2="21.5" y2="21.5" stroke="#000000" stroke-width="2"></line>
       <path
-        d="M 0 0 C 12 0, 18 12, 18 24 C 18 36, 24 48, 36 48 L 36 0 Z"
-        fill="#000000"
-      ></path>
-      <path
-        d="M 0 0.5 C 12 0.5, 18 12, 18 24 C 18 36, 24 47.5, 36 47.5"
+        d="M 0 0.5 C 12 0.5, 21.5 10, 21.5 22"
         fill="none"
         stroke="rgba(255, 255, 255, 0.16)"
         stroke-width="1"
       ></path>
     </svg>
 
-    <!-- Center Island Body: One continuous black slab with bottom border -->
+    <!-- Center Island Body: Rounded corners, flat bottom, fluid expansion -->
     <div class="island-body">
       <div class="island-bar">
         <a href="/" class="island-brand" aria-label="Tiny Melo home">
@@ -136,21 +133,18 @@ const { active } = Astro.props;
       </nav>
     </div>
 
-    <!-- Right S-Curve Cap: Seamless transition from floor back to ceiling -->
+    <!-- Right Top Ear Flare: Concave ceiling transition -->
     <svg
-      class="island-cap island-cap-right"
-      width="36"
-      height="48"
-      viewBox="0 0 36 48"
-      preserveAspectRatio="none"
+      class="island-ear island-ear-right"
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
       aria-hidden="true"
     >
+      <path d="M 0 22 C 0 10, 10 0, 22 0 L 0 0 Z" fill="#000000"></path>
+      <line x1="0.5" y1="0" x2="0.5" y2="21.5" stroke="#000000" stroke-width="2"></line>
       <path
-        d="M 0 48 C 12 48, 18 36, 18 24 C 18 12, 24 0, 36 0 L 0 0 Z"
-        fill="#000000"
-      ></path>
-      <path
-        d="M 0 47.5 C 12 47.5, 18 36, 18 24 C 18 12, 24 0.5, 36 0.5"
+        d="M 0.5 22 C 0.5 10, 10 0.5, 22 0.5"
         fill="none"
         stroke="rgba(255, 255, 255, 0.16)"
         stroke-width="1"

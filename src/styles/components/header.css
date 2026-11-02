@@ -1,6 +1,7 @@
 /* ==========================================================================
    iPhone Dynamic Island Header
-   Unified continuous S-curve geometry from ceiling into island floor.
+   Unified continuous geometry from ceiling into island floor.
+   Rounded bottom corners, flat bottom edge, concave ceiling ear flares.
    Mobile: expands downward fluidly with animated hamburger.
    ========================================================================== */
 
@@ -16,8 +17,9 @@
 }
 
 .island-notch {
+  position: relative;
   display: inline-flex;
-  align-items: stretch;
+  align-items: flex-start;
   pointer-events: auto;
   filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.35))
           drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
@@ -30,35 +32,47 @@
           drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
 }
 
-.island-cap {
+/* ==========================================================================
+   Top Concave Ear Flares (Ceiling Transition)
+   ========================================================================== */
+
+.island-ear {
+  position: absolute;
+  top: 0;
+  width: 22px;
+  height: 22px;
   display: block;
-  flex-shrink: 0;
-  height: 48px;
+  pointer-events: none;
+  z-index: 3;
 }
 
-.island-cap-left {
-  margin-right: -1px;
-  position: relative;
-  z-index: 2;
+.island-ear-left {
+  left: -21.5px;
 }
 
-.island-cap-right {
-  margin-left: -1px;
-  position: relative;
-  z-index: 2;
+.island-ear-right {
+  right: -21.5px;
 }
+
+/* ==========================================================================
+   Island Body
+   Fully rounded bottom corners, flat bottom edge, continuous borders.
+   ========================================================================== */
 
 .island-body {
   background: #000000;
   color: #f6f5ee;
   height: 48px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   border-top: none;
-  border-left: none;
-  border-right: none;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
   z-index: 1;
 }
 
@@ -67,7 +81,7 @@
   align-items: center;
   gap: 20px;
   height: 48px;
-  padding: 0 4px;
+  padding: 0 16px;
 }
 
 /* ==========================================================================
@@ -217,20 +231,6 @@ html[data-theme="dark"] .theme-sun {
   transform-origin: center;
 }
 
-/* Hamburger morphing to X when open */
-.island-notch.is-open .line-1 {
-  transform: translateY(5px) rotate(45deg);
-}
-
-.island-notch.is-open .line-2 {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.island-notch.is-open .line-3 {
-  transform: translateY(-5px) rotate(-45deg);
-}
-
 /* ==========================================================================
    Mobile Dropdown Menu (Desktop: Hidden)
    ========================================================================== */
@@ -249,30 +249,34 @@ html[data-theme="dark"] .theme-sun {
     max-width: 440px;
   }
 
-  .island-cap {
-    width: 32px;
-    height: 56px;
-    transition: height 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  .island-ear {
+    width: 22px;
+    height: 22px;
+  }
+
+  .island-ear-left {
+    left: -21.5px;
+  }
+
+  .island-ear-right {
+    right: -21.5px;
   }
 
   .island-body {
-    flex: 1;
-    min-width: 0;
+    width: 100%;
     height: 56px;
-    width: auto;
-    padding: 0;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    overflow: hidden;
-    transition: height 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transition:
+      height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+      border-radius 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .island-bar {
     height: 56px;
-    padding: 0 12px 0 14px;
+    padding: 0 14px 0 16px;
     justify-content: space-between;
     gap: 14px;
     width: 100%;
@@ -342,7 +346,7 @@ html[data-theme="dark"] .theme-sun {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    padding: 0 8px 14px;
+    padding: 0 8px 16px;
   }
 
   .island-mobile-link {
@@ -371,17 +375,11 @@ html[data-theme="dark"] .theme-sun {
     background: rgba(255, 255, 255, 0.14);
   }
 
-  /* When open: both the caps and body expand down together! */
-  .island-notch.is-open .island-cap {
-    height: 220px;
-  }
-
+  /* When open: body expands downward while keeping fully rounded corners & flat bottom */
   .island-notch.is-open .island-body {
     height: 220px;
-    border-radius: 0;
-    border-left: none;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
   }
 
   .island-notch.is-open .island-mobile-menu {
@@ -396,18 +394,15 @@ html[data-theme="dark"] .theme-sun {
     width: 92%;
   }
 
-  .island-cap {
-    width: 26px;
-    height: 52px;
-  }
-
   .island-body {
     height: 52px;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
   }
 
   .island-bar {
     height: 52px;
-    padding: 0 10px 0 12px;
+    padding: 0 12px 0 14px;
   }
 
   .island-brand img {
@@ -420,12 +415,10 @@ html[data-theme="dark"] .theme-sun {
     height: 30px;
   }
 
-  .island-notch.is-open .island-cap {
-    height: 210px;
-  }
-
   .island-notch.is-open .island-body {
     height: 210px;
+    border-bottom-left-radius: 26px;
+    border-bottom-right-radius: 26px;
   }
 
   .island-mobile-link {
