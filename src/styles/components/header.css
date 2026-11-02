@@ -245,41 +245,42 @@ html[data-theme="dark"] .theme-sun {
 
 @media (max-width: 640px) {
   .island-notch {
-    width: 75%;
-    max-width: 520px;
+    width: 88%;
+    max-width: 440px;
   }
 
   .island-cap {
-    align-self: flex-start;
-    width: 26px;
-    height: 46px;
+    width: 32px;
+    height: 56px;
+    transition: height 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .island-body {
     flex: 1;
     min-width: 0;
-    height: 46px;
+    height: 56px;
     width: auto;
     padding: 0;
     border-radius: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    border-left: none;
+    border-right: none;
+    border-top: none;
     overflow: hidden;
-    transition:
-      height 0.36s cubic-bezier(0.16, 1, 0.3, 1),
-      border-radius 0.32s ease,
-      border-color 0.32s ease;
+    transition: height 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .island-bar {
-    height: 46px;
-    padding: 0 10px 0 12px;
+    height: 56px;
+    padding: 0 12px 0 14px;
     justify-content: space-between;
-    gap: 12px;
+    gap: 14px;
     width: 100%;
     flex-shrink: 0;
   }
 
   .island-brand img {
-    height: 19px;
+    height: 24px;
   }
 
   .island-nav {
@@ -287,18 +288,37 @@ html[data-theme="dark"] .theme-sun {
   }
 
   .island-controls {
-    gap: 6px;
+    gap: 8px;
   }
 
   .theme-toggle {
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
   }
 
   .island-burger {
     display: flex;
-    width: 26px;
-    height: 26px;
+    width: 32px;
+    height: 32px;
+    gap: 4px;
+  }
+
+  .burger-line {
+    width: 15px;
+    height: 1.8px;
+  }
+
+  .island-notch.is-open .line-1 {
+    transform: translateY(5.8px) rotate(45deg);
+  }
+
+  .island-notch.is-open .line-2 {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .island-notch.is-open .line-3 {
+    transform: translateY(-5.8px) rotate(-45deg);
   }
 
   .island-mobile-menu {
@@ -308,32 +328,32 @@ html[data-theme="dark"] .theme-sun {
     pointer-events: none;
     transform: translateY(-8px);
     transition:
-      opacity 0.22s ease,
-      transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity 0.24s ease 0.06s,
+      transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) 0.04s;
   }
 
   .island-menu-divider {
     height: 1px;
     background: rgba(255, 255, 255, 0.1);
-    margin: 0 8px 6px;
+    margin: 4px 10px 8px;
   }
 
   .island-menu-links {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    padding: 0 6px 10px;
+    gap: 4px;
+    padding: 0 8px 14px;
   }
 
   .island-mobile-link {
     display: flex;
     align-items: center;
-    font-size: 13.5px;
+    font-size: 14.5px;
     font-weight: 500;
     color: #d4d4d8;
     text-decoration: none;
-    padding: 9px 12px;
-    border-radius: 10px;
+    padding: 10px 14px;
+    border-radius: 12px;
     letter-spacing: -0.01em;
     transition:
       background-color 0.18s ease,
@@ -351,14 +371,17 @@ html[data-theme="dark"] .theme-sun {
     background: rgba(255, 255, 255, 0.14);
   }
 
-  /* Island expands downward with the menus */
+  /* When open: both the caps and body expand down together! */
+  .island-notch.is-open .island-cap {
+    height: 220px;
+  }
+
   .island-notch.is-open .island-body {
-    height: 184px;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-left: 1px solid rgba(255, 255, 255, 0.14);
-    border-right: 1px solid rgba(255, 255, 255, 0.14);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    height: 220px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   }
 
   .island-notch.is-open .island-mobile-menu {
@@ -370,29 +393,43 @@ html[data-theme="dark"] .theme-sun {
 
 @media (max-width: 380px) {
   .island-notch {
-    width: 82%;
+    width: 92%;
   }
 
   .island-cap {
-    width: 20px;
-    height: 44px;
-  }
-
-  .island-bar {
-    height: 44px;
-    padding: 0 8px 0 10px;
+    width: 26px;
+    height: 52px;
   }
 
   .island-body {
-    height: 44px;
+    height: 52px;
+  }
+
+  .island-bar {
+    height: 52px;
+    padding: 0 10px 0 12px;
+  }
+
+  .island-brand img {
+    height: 21px;
+  }
+
+  .theme-toggle,
+  .island-burger {
+    width: 30px;
+    height: 30px;
+  }
+
+  .island-notch.is-open .island-cap {
+    height: 210px;
   }
 
   .island-notch.is-open .island-body {
-    height: 180px;
+    height: 210px;
   }
 
   .island-mobile-link {
-    font-size: 13px;
-    padding: 8px 10px;
+    font-size: 14px;
+    padding: 9px 12px;
   }
 }
