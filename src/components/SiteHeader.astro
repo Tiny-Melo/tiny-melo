@@ -31,66 +31,109 @@ const { active } = Astro.props;
 
     <!-- Center Island Body: One continuous black slab with bottom border -->
     <div class="island-body">
-      <a href="/" class="island-brand" aria-label="Tiny Melo home">
-        <img
-          src="/brand/logos/primary-horizontal-reverse.svg"
-          width="112"
-          height="26"
-          alt="Tiny Melo"
-        />
-      </a>
+      <div class="island-bar">
+        <a href="/" class="island-brand" aria-label="Tiny Melo home">
+          <img
+            src="/brand/logos/primary-horizontal-reverse.svg"
+            width="112"
+            height="26"
+            alt="Tiny Melo"
+          />
+        </a>
 
-      <nav class="island-nav" aria-label="Main navigation">
-        <a href="/#work" class="island-link">The projects</a>
-        <a
-          href="/about"
-          class="island-link"
-          aria-current={active === "about" ? "page" : undefined}
-          >The human</a
-        >
-        <a
-          href="https://github.com/tinymelo"
-          class="island-link"
-          target="_blank"
-          rel="noreferrer">GitHub</a
-        >
-      </nav>
+        <!-- Desktop Navigation: hidden on mobile -->
+        <nav class="island-nav" aria-label="Main navigation">
+          <a href="/#work" class="island-link">The projects</a>
+          <a
+            href="/about"
+            class="island-link"
+            aria-current={active === "about" ? "page" : undefined}
+            >The human</a
+          >
+          <a
+            href="https://github.com/tinymelo"
+            class="island-link"
+            target="_blank"
+            rel="noreferrer">GitHub</a
+          >
+        </nav>
 
-      <button
-        class="theme-toggle"
-        type="button"
-        aria-label="Switch color theme"
-        aria-pressed="false"
+        <div class="island-controls">
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch color theme"
+            aria-pressed="false"
+          >
+            <svg
+              class="theme-moon"
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+              ><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"
+              ></path></svg
+            >
+            <svg
+              class="theme-sun"
+              viewBox="0 0 24 24"
+              width="14"
+              height="14"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              aria-hidden="true"
+              ><circle cx="12" cy="12" r="4"></circle><path
+                d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+              ></path></svg
+            >
+          </button>
+
+          <!-- Mobile Hamburger Button: visible only on <= 640px -->
+          <button
+            class="island-burger"
+            type="button"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+            aria-controls="island-mobile-menu"
+          >
+            <span class="burger-line line-1"></span>
+            <span class="burger-line line-2"></span>
+            <span class="burger-line line-3"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu: slides down inside the island -->
+      <nav
+        id="island-mobile-menu"
+        class="island-mobile-menu"
+        aria-label="Mobile navigation"
+        aria-hidden="true"
       >
-        <svg
-          class="theme-moon"
-          viewBox="0 0 24 24"
-          width="14"
-          height="14"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-          ><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"
-          ></path></svg
-        >
-        <svg
-          class="theme-sun"
-          viewBox="0 0 24 24"
-          width="14"
-          height="14"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-          stroke-linecap="round"
-          aria-hidden="true"
-          ><circle cx="12" cy="12" r="4"></circle><path
-            d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
-          ></path></svg
-        >
-      </button>
+        <div class="island-menu-divider" aria-hidden="true"></div>
+        <div class="island-menu-links">
+          <a href="/#work" class="island-mobile-link">The projects</a>
+          <a
+            href="/about"
+            class="island-mobile-link"
+            aria-current={active === "about" ? "page" : undefined}
+            >The human</a
+          >
+          <a
+            href="https://github.com/tinymelo"
+            class="island-mobile-link"
+            target="_blank"
+            rel="noreferrer">GitHub</a
+          >
+        </div>
+      </nav>
     </div>
 
     <!-- Right S-Curve Cap: Seamless transition from floor back to ceiling -->
@@ -114,7 +157,10 @@ const { active } = Astro.props;
       ></path>
     </svg>
   </div>
+  <!-- Backdrop for clicking outside on mobile -->
+  <div class="island-backdrop" aria-hidden="true"></div>
 </header>
 <script>
   import "../scripts/theme";
+  import "../scripts/navIsland";
 </script>
