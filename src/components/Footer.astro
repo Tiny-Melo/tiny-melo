@@ -1,0 +1,40 @@
+---
+import Arrow from "./Arrow.astro";
+import "../styles/components/footer.css";
+
+interface Props {
+  eyebrow?: string;
+  heading?: string;
+}
+
+const {
+  eyebrow = "THERE'S ALWAYS ANOTHER LITTLE IDEA.",
+  heading = "See you around<br />the workbench",
+} = Astro.props;
+---
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2>
+      <Fragment set:html={heading} /><span>.</span>
+    </h2>
+    <a
+      class="button primary"
+      href="https://github.com/tinymelo"
+      target="_blank"
+      rel="noreferrer">Follow the next little thing <Arrow /></a>
+    <div class="footer-bottom">
+      <a href="/" class="brand" aria-label="Tiny Melo">
+        <img
+          src="/brand/logos/primary-horizontal-reverse.svg"
+          width="135"
+          height="33"
+          alt="Tiny Melo"
+        />
+      </a>
+      <span>© {new Date().getFullYear()} Tiny Melo</span>
+      <a href="#">Back to the top <Arrow direction="up" /></a>
+    </div>
+  </div>
+</footer>

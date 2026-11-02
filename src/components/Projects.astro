@@ -1,0 +1,81 @@
+---
+import Arrow from "./Arrow.astro";
+import "../styles/components/projects.css";
+---
+
+<section id="work" class="work wrap">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">FROM THE WORKBENCH</p>
+      <h2>
+        A few things<br />I've been making<span class="gold">.</span>
+      </h2>
+    </div>
+    <p>
+      Some solve an everyday problem.<br />Some start with “what if?”<br />All
+      have a little Melo in them.
+    </p>
+  </div>
+  <div class="project-grid">
+    <article id="melotv" class="project-card tv-card wide">
+      <div class="card-copy">
+        <div class="card-meta">
+          <span>STREAMING SUITE</span>
+          <span class="status">Open source</span>
+        </div>
+        <h3>Melo TV</h3>
+        <p>
+          Movies and TV on your own server.<br />A clean, self-hosted streaming
+          suite for Mac, iPhone, web, and Docker.
+        </p>
+        <button class="text-link" data-project="melotv"
+          >Take a closer look <Arrow /></button
+        >
+        <span class="platform">macOS · iOS · Web · Docker</span>
+      </div>
+      <div class="tv-art project-art">
+        <img
+          src="/assets/melotv.svg"
+          alt="Melo TV streaming display mark"
+        />
+        <div class="art-caption">
+          <span>STREAM FREELY.</span>
+          <span>Your movies. Your server.</span>
+        </div>
+      </div>
+    </article>
+    <article id="zipmelo" class="project-card zip-card wide">
+      <div class="card-copy">
+        <div class="card-meta">
+          <span>UNDER THE HOOD</span>
+          <span class="status">Open source · Swift 6</span>
+        </div>
+        <h3>ZipMelo</h3>
+        <p>
+          Fast, memory-safe ZIP & CBZ engine.<br />Built around how comic and
+          manga readers actually access pages.
+        </p>
+        <button class="text-link" data-project="zipmelo"
+          >Take a closer look <Arrow /></button
+        >
+        <span class="platform">Swift 6 · macOS CLI</span>
+      </div>
+      <div class="small-art zip-art project-art">
+        <img
+          src="/assets/zipmelo.png"
+          alt="ZipMelo’s golden retriever character"
+          loading="lazy"
+        />
+        <span class="zip-type" aria-hidden="true"
+          >zip.<br />read.<br />repeat.</span
+        >
+      </div>
+    </article>
+  </div>
+  <p class="work-footnote">
+    Always tinkering. More things are on the way. <a
+      href="https://github.com/tinymelo"
+      target="_blank"
+      rel="noreferrer">Follow along <Arrow /></a>
+  </p>
+</section>

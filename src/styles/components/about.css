@@ -1,0 +1,430 @@
+.about-preview-link {
+  display: block;
+  font-size: 12px;
+  margin-top: 24px;
+  color: var(--muted);
+}
+
+.about-preview-link:hover {
+  color: var(--ink);
+}
+
+.about-hero {
+  padding-top: 100px;
+}
+
+.about-hero h1 {
+  font-size: clamp(54px, 7.5vw, 106px);
+  letter-spacing: -6px;
+  margin: 32px 0 42px;
+  max-width: 1200px;
+}
+
+.about-hero h1 em,
+.about-melo h2 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+  color: #a36b2b;
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: center;
+  gap: 110px;
+}
+
+.about-intro>p {
+  font-size: 20px;
+  line-height: 1.65;
+  color: var(--muted);
+  letter-spacing: -0.3px;
+  max-width: 580px;
+  margin: 0;
+}
+
+.about-intro-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.about-hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 70px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+
+.portfolio {
+  padding-top: 125px;
+  padding-bottom: 130px;
+}
+
+.portfolio-list {
+  border-top: 1px solid var(--line);
+}
+
+.portfolio-row {
+  display: grid;
+  grid-template-columns: 112px minmax(0, 1fr) 175px;
+  align-items: center;
+  gap: 38px;
+  padding: 38px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.portfolio-icon {
+  background: #eee9df;
+  border-radius: 24px;
+  width: 112px;
+  height: 112px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.portfolio-icon img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  transition: transform 0.7s ease-out;
+}
+
+.portfolio-row:hover .portfolio-icon img {
+  transform: scale(1.05);
+}
+
+.portfolio-type {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.portfolio-copy h3 {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+
+.portfolio-copy>p:last-child {
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 600px;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.portfolio-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.portfolio-actions .text-link {
+  align-self: flex-end;
+  font-size: 12px;
+  gap: 22px;
+}
+
+.about-melo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  padding-bottom: 140px;
+}
+
+.about-melo h2 {
+  font-size: clamp(40px, 4.8vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -3px;
+  font-weight: 500;
+  margin: 26px 0 30px;
+}
+
+.about-melo-copy>p:not(.eyebrow) {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 450px;
+}
+
+.about-melo .text-link {
+  margin-top: 15px;
+}
+
+.about-dog {
+  margin: 0;
+  text-align: center;
+}
+
+.about-dog img {
+  width: auto;
+  max-width: 100%;
+  height: 280px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.about-dog figcaption {
+  font: italic 13px Georgia, serif;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+.about-hero-layout {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  align-items: center;
+  gap: 64px;
+}
+
+.about-hero-content {
+  min-width: 0;
+}
+
+.about-hero-layout h1 {
+  font-size: clamp(48px, 5.25vw, 76px);
+  letter-spacing: -4.5px;
+  margin-bottom: 32px;
+}
+
+.about-hero-layout .about-intro {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.about-hero-layout .about-intro>p {
+  font-size: 17px;
+  max-width: 520px;
+}
+
+.about-hero-layout .about-intro-actions {
+  flex-direction: row;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+}
+
+.christopher-portrait {
+  margin: 0;
+  min-width: 0;
+}
+
+.portrait-frame {
+  border-radius: 22px;
+  overflow: hidden;
+  background: #eee7da;
+}
+
+.portrait-frame img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.christopher-portrait figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 16px;
+}
+
+html[data-theme="dark"] .about-hero h1 em,
+html[data-theme="dark"] .about-melo h2 em {
+  color: var(--gold);
+}
+
+html[data-theme="dark"] .portfolio-icon {
+  background: #232019;
+}
+
+@media (max-width: 1050px) {
+  .about-hero-layout {
+    gap: 35px;
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .about-hero-layout h1 {
+    font-size: clamp(43px, 5.2vw, 65px);
+    letter-spacing: -3px;
+  }
+
+  .about-hero-layout .about-intro>p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-intro {
+    gap: 55px;
+  }
+
+  .portfolio-row {
+    grid-template-columns: 85px minmax(0, 1fr) 150px;
+    gap: 25px;
+  }
+
+  .portfolio-icon {
+    width: 85px;
+    height: 85px;
+    border-radius: 20px;
+  }
+
+  .portfolio-icon img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .about-melo {
+    gap: 45px;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-hero-layout {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .about-hero-layout h1 {
+    font-size: clamp(39px, 10.5vw, 65px);
+    letter-spacing: -2.8px;
+  }
+
+  .about-hero-layout .about-intro>p {
+    font-size: 16px;
+  }
+
+  .christopher-portrait {
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .about-hero-layout .about-intro-actions {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding-top: 65px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(39px, 10.5vw, 60px);
+    letter-spacing: -2.8px;
+    margin: 25px 0 30px;
+  }
+
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about-intro>p {
+    font-size: 16px;
+  }
+
+  .about-intro-actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .about-intro-actions .text-link {
+    font-size: 11px;
+    gap: 12px;
+  }
+
+  .about-hero-bottom {
+    font-size: 9px;
+    margin-top: 45px;
+  }
+
+  .portfolio {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  .portfolio-row {
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 20px;
+    align-items: start;
+    padding: 28px 0;
+  }
+
+  .portfolio-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+  }
+
+  .portfolio-icon img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .portfolio-type {
+    font-size: 9px;
+    letter-spacing: 0;
+  }
+
+  .portfolio-copy h3 {
+    font-size: 27px;
+  }
+
+  .portfolio-copy>p:last-child {
+    font-size: 12px;
+  }
+
+  .portfolio-actions {
+    grid-column: 2;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .portfolio-actions .text-link {
+    font-size: 10px;
+    gap: 10px;
+  }
+
+  .portfolio-actions .status {
+    font-size: 9px;
+    padding: 5px 8px;
+  }
+
+  .about-melo {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding-bottom: 80px;
+  }
+
+  .about-melo h2 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .about-melo-copy>p:not(.eyebrow) {
+    font-size: 14px;
+  }
+
+  .about-dog img {
+    height: 220px;
+  }
+}

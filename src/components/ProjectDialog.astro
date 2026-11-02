@@ -1,0 +1,107 @@
+---
+import Arrow from "./Arrow.astro";
+import "../styles/components/dialog.css";
+---
+
+<dialog id="project-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-shell">
+    <button class="dialog-close" aria-label="Close project details">×</button>
+    <img id="dialog-image" src="/assets/melotv.svg" alt="" />
+    <p id="dialog-status" class="eyebrow"></p>
+    <h2 id="dialog-title"></h2>
+    <p id="dialog-description"></p>
+    <ul id="dialog-features"></ul>
+    <a
+      id="dialog-link"
+      class="button primary"
+      target="_blank"
+      rel="noreferrer">View project <Arrow /></a>
+  </div>
+</dialog>
+
+<script>
+  const projects = {
+    melotv: {
+      name: "Melo TV",
+      status: "Open source · macOS, iOS, Web & Docker",
+      image: "melotv.svg",
+      description:
+        "A self-hosted streaming server and app suite for movies and TV shows. Run it on your Mac or with Docker, and stream directly on your Mac, iPhone, or in your browser without popups or ads.",
+      features: [
+        "Self-hosted server with Docker or native Mac app support",
+        "Native iOS and web apps with clean, ad-free playback",
+        "Direct video streaming without tabs, popups, or fake buttons",
+      ],
+      url: "https://github.com/ChrisRodStar/Mello-Tv",
+    },
+    zipmelo: {
+      name: "ZipMelo",
+      status: "Open source · Swift 6",
+      image: "zipmelo.png",
+      description:
+        "A Swift 6 ZIP and CBZ engine built around the real-world access patterns of comic and manga readers.",
+      features: [
+        "Natural page ordering and concurrent, positional archive reads",
+        "ZIP64, zero-copy streaming, and atomic directory writes",
+        "ComicInfo XML support and a universal macOS CLI",
+      ],
+      url: "https://github.com/ChrisRodStar/zipmelo",
+    },
+  };
+
+  const dialog = document.querySelector<HTMLDialogElement>("#project-dialog");
+
+  if (dialog) {
+    document
+      .querySelectorAll<HTMLButtonElement>("[data-project]")
+      .forEach((button) =>
+        button.addEventListener("click", () => {
+          const projectKey = button.dataset.project as keyof typeof projects;
+          const project = projects[projectKey];
+          if (!project) return;
+
+          const titleEl = document.querySelector("#dialog-title");
+          const statusEl = document.querySelector("#dialog-status");
+          const descEl = document.querySelector("#dialog-description");
+          const imgEl = document.querySelector<HTMLImageElement>("#dialog-image");
+          const listEl = document.querySelector("#dialog-features");
+          const linkEl = document.querySelector<HTMLAnchorElement>("#dialog-link");
+
+          if (titleEl) titleEl.textContent = project.name;
+          if (statusEl) statusEl.textContent = project.status;
+          if (descEl) descEl.textContent = project.description;
+          if (imgEl) imgEl.src = `/assets/${project.image}`;
+
+          if (listEl) {
+            listEl.replaceChildren(
+              ...project.features.map((text) => {
+                const li = document.createElement("li");
+                li.textContent = text;
+                return li;
+              }),
+            );
+          }
+
+          if (linkEl) {
+            linkEl.hidden = !project.url;
+            if (project.url) linkEl.href = project.url;
+          }
+
+          dialog.showModal();
+          document.body.classList.add("modal-open");
+        }),
+      );
+
+    dialog
+      .querySelector(".dialog-close")
+      ?.addEventListener("click", () => dialog.close());
+
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener("close", () =>
+      document.body.classList.remove("modal-open"),
+    );
+  }
+</script>

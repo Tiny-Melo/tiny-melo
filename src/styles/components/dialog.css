@@ -1,0 +1,85 @@
+.modal-open {
+  overflow: hidden;
+}
+
+dialog {
+  border: 0;
+  border-radius: 24px;
+  background: var(--paper);
+  color: var(--ink);
+  width: 570px;
+  max-width: calc(100% - 32px);
+  padding: 0;
+  max-height: 90vh;
+}
+
+dialog::backdrop {
+  background: #17191695;
+  backdrop-filter: blur(8px);
+}
+
+.dialog-shell {
+  padding: 40px;
+  position: relative;
+}
+
+.dialog-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  font-size: 25px;
+  background: transparent;
+}
+
+.dialog-shell>img {
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  margin-bottom: 25px;
+}
+
+.dialog-shell h2 {
+  font-size: 44px;
+  letter-spacing: -2px;
+  font-weight: 500;
+  margin: 12px 0 20px;
+}
+
+.dialog-shell>p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.dialog-shell ul {
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.dialog-shell li {
+  padding: 4px 0;
+}
+
+@media (max-width: 600px) {
+  .dialog-shell {
+    padding: 30px;
+  }
+
+  .dialog-shell h2 {
+    font-size: 37px;
+  }
+
+  .dialog-shell>p:not(.eyebrow) {
+    font-size: 14px;
+  }
+
+  .dialog-shell ul {
+    font-size: 13px;
+  }
+}

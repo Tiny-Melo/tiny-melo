@@ -1,0 +1,100 @@
+---
+import Arrow from "./Arrow.astro";
+import "../styles/components/bench.css";
+---
+
+<section class="bench wrap">
+  <div>
+    <p class="eyebrow">A PEEK BEHIND THE APPS</p>
+    <h2>
+      Small pieces.<br />Thoughtfully built.
+    </h2>
+  </div>
+  <div class="spotlight">
+    <div class="spotlight-top">
+      <span id="spotlight-count">01 / 02</span>
+      <div class="spotlight-controls">
+        <button id="spotlight-prev" aria-label="Previous project"
+          ><Arrow direction="left" /></button
+        ><button id="spotlight-next" aria-label="Next project"
+          ><Arrow direction="right" /></button
+        >
+      </div>
+    </div>
+    <div id="spotlight-content" aria-live="polite">
+      <img
+        id="spotlight-image"
+        src="/assets/melotv.svg"
+        alt="Melo TV mark"
+        loading="lazy"
+      />
+      <h3 id="spotlight-title">Melo TV</h3>
+      <p id="spotlight-description">
+        A self-hosted streaming server and app suite for movies and TV shows
+        across macOS, iOS, web, and Docker.
+      </p>
+      <a
+        id="spotlight-link"
+        class="text-link"
+        href="https://github.com/ChrisRodStar/Mello-Tv"
+        target="_blank"
+        rel="noreferrer"><span>View on GitHub</span> <Arrow /></a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const spotlights = [
+    {
+      name: "Melo TV",
+      image: "melotv.svg",
+      description:
+        "A self-hosted streaming server and app suite for movies and TV shows across macOS, iOS, web, and Docker.",
+      url: "https://github.com/ChrisRodStar/Mello-Tv",
+      link: "View on GitHub",
+    },
+    {
+      name: "ZipMelo",
+      image: "zipmelo.png",
+      description:
+        "A ZIP and CBZ engine for Swift 6, built around how comic and manga readers actually access pages.",
+      url: "https://github.com/ChrisRodStar/zipmello",
+      link: "View the source",
+    },
+  ];
+
+  let current = 0;
+
+  function updateSpotlight(delta: number) {
+    current = (current + delta + spotlights.length) % spotlights.length;
+    const item = spotlights[current];
+    const countEl = document.querySelector("#spotlight-count");
+    const titleEl = document.querySelector("#spotlight-title");
+    const descEl = document.querySelector("#spotlight-description");
+    const imageEl = document.querySelector<HTMLImageElement>("#spotlight-image");
+    const linkEl = document.querySelector<HTMLAnchorElement>("#spotlight-link");
+
+    if (countEl) countEl.textContent = `0${current + 1} / 02`;
+    if (titleEl) titleEl.textContent = item.name;
+    if (descEl) descEl.textContent = item.description;
+    if (imageEl) {
+      imageEl.src = `/assets/${item.image}`;
+      imageEl.alt = `${item.name} mark`;
+    }
+    if (linkEl) {
+      linkEl.hidden = !item.url;
+      if (item.url) {
+        linkEl.href = item.url;
+        const textSpan = linkEl.querySelector("span");
+        if (textSpan) textSpan.textContent = item.link;
+      }
+    }
+  }
+
+  document
+    .querySelector("#spotlight-prev")
+    ?.addEventListener("click", () => updateSpotlight(-1));
+  document
+    .querySelector("#spotlight-next")
+    ?.addEventListener("click", () => updateSpotlight(1));
+</script>

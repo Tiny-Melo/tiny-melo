@@ -1,0 +1,54 @@
+---
+import "@fontsource/geist/400.css";
+import "@fontsource/geist/500.css";
+import "@fontsource/geist/600.css";
+import "@fontsource/geist/700.css";
+import "../styles/global.css";
+import SiteHeader from "../components/SiteHeader.astro";
+import ThemeInit from "../components/ThemeInit.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  activeNav?: "home" | "about";
+  skipTo?: string;
+  bodyClass?: string;
+}
+
+const {
+  title = "Tiny Melo — Little tools. A lot of heart.",
+  description = "Tiny Melo is Christopher’s independent home for thoughtful apps, useful tools, and experiments. Explore Melo TV, ZipMelo, and more.",
+  activeNav = "home",
+  skipTo = "#work",
+  bodyClass,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/brand/favicons/favicon.svg" />
+    <link rel="icon" sizes="any" href="/brand/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" href="/brand/favicons/favicon-brand-180.png" />
+    <link rel="manifest" href="/brand/favicons/site.webmanifest" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/brand/social/social-card-brand-1200.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/brand/social/social-card-brand-1200.png" />
+    <meta name="theme-color" content="#ffffff" />
+    <ThemeInit />
+  </head>
+  <body class={bodyClass}>
+    <a class="skip-link" href={skipTo}>Skip to content</a>
+    <SiteHeader active={activeNav} />
+    <main>
+      <slot />
+    </main>
+    <slot name="modal" />
+  </body>
+</html>
