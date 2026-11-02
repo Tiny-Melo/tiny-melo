@@ -60,3 +60,4 @@ if (typeof window !== "undefined") {
   initNavIsland();
   document.addEventListener("astro:after-swap", initNavIsland);
 }
+

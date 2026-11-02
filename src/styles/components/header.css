@@ -239,31 +239,14 @@ html[data-theme="dark"] .theme-sun {
   display: none;
 }
 
-.island-backdrop {
-  display: none;
-}
-
 /* ==========================================================================
    Responsive: Mobile Dynamic Island
    ========================================================================== */
 
 @media (max-width: 640px) {
-  .island-backdrop {
-    display: block;
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 999;
-  }
-
-  .island-notch.is-open + .island-backdrop {
-    opacity: 1;
-    pointer-events: auto;
+  .island-notch {
+    width: 75%;
+    max-width: 520px;
   }
 
   .island-cap {
@@ -273,21 +256,22 @@ html[data-theme="dark"] .theme-sun {
   }
 
   .island-body {
+    flex: 1;
+    min-width: 0;
     height: 46px;
-    width: 216px;
+    width: auto;
     padding: 0;
     border-radius: 0;
     overflow: hidden;
     transition:
       height 0.36s cubic-bezier(0.16, 1, 0.3, 1),
-      width 0.32s cubic-bezier(0.16, 1, 0.3, 1),
       border-radius 0.32s ease,
       border-color 0.32s ease;
   }
 
   .island-bar {
     height: 46px;
-    padding: 0 8px 0 10px;
+    padding: 0 10px 0 12px;
     justify-content: space-between;
     gap: 12px;
     width: 100%;
@@ -370,7 +354,6 @@ html[data-theme="dark"] .theme-sun {
   /* Island expands downward with the menus */
   .island-notch.is-open .island-body {
     height: 184px;
-    width: min(300px, calc(100vw - 44px));
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border-left: 1px solid rgba(255, 255, 255, 0.14);
@@ -386,6 +369,10 @@ html[data-theme="dark"] .theme-sun {
 }
 
 @media (max-width: 380px) {
+  .island-notch {
+    width: 82%;
+  }
+
   .island-cap {
     width: 20px;
     height: 44px;
@@ -393,17 +380,15 @@ html[data-theme="dark"] .theme-sun {
 
   .island-bar {
     height: 44px;
-    padding: 0 6px 0 8px;
+    padding: 0 8px 0 10px;
   }
 
   .island-body {
     height: 44px;
-    width: 200px;
   }
 
   .island-notch.is-open .island-body {
     height: 180px;
-    width: calc(100vw - 36px);
   }
 
   .island-mobile-link {
