@@ -17,9 +17,10 @@ bun run check
 
 Project copy and details live in `src/pages/index.astro`; styles live in `src/styles/global.css`. Assets copied from the local branding libraries live in `public/assets`.
 
-## Content
+## Projects
 
-Melloku and Speakmelo are shown as projects in development. BrewPulse is shown as a public beta; its details note that the current beta is unsigned. ZipMello links to its existing source repository. MelloRunner appears in the spotlight with its current, limited scope. Aidoku is an external reference and is not presented as Tiny Melo’s own product.
+- **Melo TV**: Open source streaming server and app suite for movies and TV shows across macOS, iOS, Web, and Docker.
+- **ZipMelo**: Open source ZIP & CBZ engine built for Swift 6.
 
 The site is local only. No hosting, analytics, account system, or contact address has been configured.
 
