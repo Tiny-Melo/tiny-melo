@@ -1,0 +1,75 @@
+---
+interface Props {
+  position: "top" | "bottom";
+}
+
+const { position } = Astro.props;
+---
+
+<div class="studio-divider wrap" aria-hidden="true">
+  <div class:list={["studio-divider-curve", { "is-bottom": position === "bottom" }]}>
+    <span class="studio-divider-mark">
+      <img src="/brand/logos/dog-coral.svg" width="28" height="26" alt="" loading="lazy" />
+    </span>
+  </div>
+</div>
+
+<style>
+  .studio-divider-curve {
+    position: relative;
+    height: 64px;
+  }
+
+  .studio-divider-curve::before {
+    content: "";
+    position: absolute;
+    inset: 18px 0 0;
+    border-top: 1px solid var(--line);
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  }
+
+  .studio-divider-mark {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 44px;
+    margin-inline: auto;
+    background: var(--paper);
+  }
+
+  .studio-divider-mark img {
+    width: 28px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  .is-bottom::before {
+    inset: 0 0 18px;
+    border-top: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  }
+
+  .is-bottom .studio-divider-mark {
+    top: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .studio-divider-curve {
+      height: 48px;
+    }
+
+    .studio-divider-curve::before {
+      bottom: 8px;
+    }
+
+    .is-bottom::before {
+      inset: 8px 0 18px;
+    }
+
+    .is-bottom .studio-divider-mark {
+      top: 4px;
+    }
+  }
+</style>

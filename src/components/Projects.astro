@@ -2,75 +2,28 @@
 import "../styles/components/projects.css";
 ---
 
-<section id="work" class="work wrap">
-  <div class="section-heading">
-    <div>
-      <p class="eyebrow">FROM THE WORKBENCH</p>
-      <h2>
-        A few things<br />I've been making<span class="gold">.</span>
-      </h2>
-    </div>
-    <p>
-      Some solve an everyday problem.<br />Some start with “what if?”<br />All
-      have a little Melo in them.
-    </p>
-  </div>
-  <div class="project-grid">
-    <article id="melotv" class="project-card tv-card wide">
-      <div class="card-copy">
-        <div class="card-meta">
-          <span>STREAMING SUITE</span>
-          <span class="status">Open source</span>
-        </div>
-        <h3>Melo TV</h3>
-        <p>
-          Movies and TV on your own server.<br />A clean, self-hosted streaming
-          suite for Mac, iPhone, web, and Docker.
-        </p>
-        <button class="card-btn" data-project="melotv">Take a closer look</button>
-        <span class="platform">macOS · iOS · Web · Docker</span>
+<section id="work" class="work wrap" aria-labelledby="work-heading">
+  <header class="work-heading">
+    <h2 id="work-heading">Things I've made<span class="gold">.</span></h2>
+  </header>
+
+  <div class="project-collection">
+    <article id="melotv" class="project-entry" aria-labelledby="melotv-heading">
+      <img class="project-mark project-mark-tv" src="/assets/melotv.svg" width="144" height="128" alt="" loading="lazy" />
+      <div class="project-copy">
+        <h3 id="melotv-heading">Melo TV</h3>
+        <p>Movies and TV from your own server.</p>
       </div>
-      <div class="tv-art project-art">
-        <img
-          src="/assets/melotv.svg"
-          alt="Melo TV streaming display mark"
-        />
-        <div class="art-caption">
-          <span>STREAM FREELY.</span>
-          <span>Your movies. Your server.</span>
-        </div>
-      </div>
+      <button class="button secondary project-details" data-project="melotv" aria-haspopup="dialog" aria-label="View Melo TV project">View project</button>
     </article>
-    <article id="zipmelo" class="project-card zip-card wide">
-      <div class="card-copy">
-        <div class="card-meta">
-          <span>UNDER THE HOOD</span>
-          <span class="status">Open source · Swift 6</span>
-        </div>
-        <h3>ZipMelo</h3>
-        <p>
-          Fast, memory-safe ZIP & CBZ engine.<br />Built around how comic and
-          manga readers actually access pages.
-        </p>
-        <button class="card-btn" data-project="zipmelo">Take a closer look</button>
-        <span class="platform">Swift 6 · macOS CLI</span>
+
+    <article id="zipmelo" class="project-entry" aria-labelledby="zipmelo-heading">
+      <img class="project-mark" src="/assets/zipmelo.png" width="128" height="128" alt="" loading="lazy" />
+      <div class="project-copy">
+        <h3 id="zipmelo-heading">ZipMelo</h3>
+        <p>ZIP &amp; CBZ tools for comic and manga readers.</p>
       </div>
-      <div class="small-art zip-art project-art">
-        <img
-          src="/assets/zipmelo.png"
-          alt="ZipMelo’s golden retriever character"
-          loading="lazy"
-        />
-        <span class="zip-type" aria-hidden="true"
-          >zip.<br />read.<br />repeat.</span
-        >
-      </div>
+      <button class="button secondary project-details" data-project="zipmelo" aria-haspopup="dialog" aria-label="View ZipMelo project">View project</button>
     </article>
   </div>
-  <p class="work-footnote">
-    Always tinkering. More things are on the way. <a
-      href="https://github.com/tinymelo"
-      target="_blank"
-      rel="noreferrer">Follow along</a>
-  </p>
 </section>

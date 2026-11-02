@@ -265,7 +265,6 @@ html[data-theme="dark"] .shelf-note {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--line);
   padding: 24px 0 22px;
   font-size: 10px;
   color: var(--muted);
