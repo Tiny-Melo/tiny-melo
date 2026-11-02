@@ -60,80 +60,8 @@
   border-bottom: 1px solid var(--line);
 }
 
-.portfolio {
-  padding-top: 125px;
-  padding-bottom: 130px;
-}
-
-.portfolio-list {
-  border-top: 1px solid var(--line);
-}
-
-.portfolio-row {
-  display: grid;
-  grid-template-columns: 112px minmax(0, 1fr) 175px;
-  align-items: center;
-  gap: 38px;
-  padding: 38px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.portfolio-icon {
-  background: #eee9df;
-  border-radius: 24px;
-  width: 112px;
-  height: 112px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-}
-
-.portfolio-icon img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  transition: transform 0.7s ease-out;
-}
-
-.portfolio-row:hover .portfolio-icon img {
-  transform: scale(1.05);
-}
-
-.portfolio-type {
-  font-size: 10px;
-  letter-spacing: 0.8px;
-  color: var(--muted);
-  margin-bottom: 10px;
-}
-
-.portfolio-copy h3 {
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
-}
-
-.portfolio-copy>p:last-child {
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 600px;
-  color: var(--muted);
-  margin-bottom: 0;
-}
-
-.portfolio-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 24px;
-}
-
-.portfolio-actions .text-link {
-  align-self: flex-end;
-  font-size: 12px;
-}
-
 .about-melo {
+  padding-top: clamp(80px, 10vw, 140px);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -168,7 +96,7 @@
 .about-dog img {
   width: auto;
   max-width: 100%;
-  height: 280px;
+  height: 420px;
   margin: 0 auto;
   object-fit: contain;
 }
@@ -245,10 +173,6 @@ html[data-theme="dark"] .about-melo h2 em {
   color: var(--gold);
 }
 
-html[data-theme="dark"] .portfolio-icon {
-  background: #232019;
-}
-
 @media (max-width: 1050px) {
   .about-hero-layout {
     gap: 35px;
@@ -270,23 +194,7 @@ html[data-theme="dark"] .portfolio-icon {
     gap: 55px;
   }
 
-  .portfolio-row {
-    grid-template-columns: 85px minmax(0, 1fr) 150px;
-    gap: 25px;
-  }
-
-  .portfolio-icon {
-    width: 85px;
-    height: 85px;
-    border-radius: 20px;
-  }
-
-  .portfolio-icon img {
-    width: 70px;
-    height: 70px;
-  }
-
-  .about-melo {
+        .about-melo {
     gap: 45px;
   }
 }
@@ -353,62 +261,7 @@ html[data-theme="dark"] .portfolio-icon {
     margin-top: 45px;
   }
 
-  .portfolio {
-    padding-top: 80px;
-    padding-bottom: 80px;
-  }
-
-  .portfolio-row {
-    grid-template-columns: 64px minmax(0, 1fr);
-    gap: 20px;
-    align-items: start;
-    padding: 28px 0;
-  }
-
-  .portfolio-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-  }
-
-  .portfolio-icon img {
-    width: 54px;
-    height: 54px;
-  }
-
-  .portfolio-type {
-    font-size: 9px;
-    letter-spacing: 0;
-  }
-
-  .portfolio-copy h3 {
-    font-size: 27px;
-  }
-
-  .portfolio-copy>p:last-child {
-    font-size: 12px;
-  }
-
-  .portfolio-actions {
-    grid-column: 2;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .portfolio-actions .text-link {
-    font-size: 10px;
-    gap: 10px;
-  }
-
-  .portfolio-actions .status {
-    font-size: 9px;
-    padding: 5px 8px;
-  }
-
-  .about-melo {
+                      .about-melo {
     grid-template-columns: 1fr;
     gap: 35px;
     padding-bottom: 80px;
@@ -424,7 +277,7 @@ html[data-theme="dark"] .portfolio-icon {
   }
 
   .about-dog img {
-    height: 220px;
+    height: 320px;
   }
 }
 
