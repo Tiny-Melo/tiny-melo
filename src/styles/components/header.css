@@ -63,14 +63,14 @@
 .island-body {
   background: #000000;
   color: #f6f5ee;
-  height: 52px;
-  min-width: 540px;
+  height: 56px;
+  min-width: 680px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom-left-radius: 26px;
-  border-bottom-right-radius: 26px;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   display: flex;
@@ -84,9 +84,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  height: 52px;
-  padding: 0 24px;
+  gap: 36px;
+  height: 56px;
+  padding: 0 28px;
   width: 100%;
 }
 
@@ -102,7 +102,7 @@
 }
 
 .island-brand img {
-  height: 36px;
+  height: 28px;
   width: auto;
   display: block;
 }
@@ -110,16 +110,16 @@
 .island-nav {
   display: flex;
   align-items: center;
-  gap: 3px;
+  gap: 6px;
 }
 
 .island-link {
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 450;
   color: #a1a1aa;
   text-decoration: none;
   letter-spacing: -0.01em;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 100px;
   white-space: nowrap;
   transition:
@@ -295,7 +295,7 @@ html[data-theme="dark"] .theme-sun {
   }
 
   .island-brand img {
-    height: 30px;
+    height: 25px;
   }
 
   .island-nav {
@@ -425,7 +425,7 @@ html[data-theme="dark"] .theme-sun {
   }
 
   .island-brand img {
-    height: 24px;
+    height: 22px;
   }
 
   .theme-toggle,
