@@ -2,43 +2,56 @@
 import "../styles/components/hero.css";
 ---
 
-<section class="hero wrap" aria-labelledby="hero-heading">
-  <p class="eyebrow">
-    <span class="little-line"></span> AN INDEPENDENT LITTLE STUDIO
-  </p>
-  <h1 id="hero-heading">
-    Little tools.<br /><span class="heart-line"
-      >A lot of <em>heart.</em></span
-    >
-  </h1>
-  <p class="hero-description">
-    A home for the things I make.<br />Thoughtful apps, useful tools, and the
-    occasional rabbit hole.
-  </p>
-  <div class="hero-actions">
-    <a class="button primary" href="#work">Meet the projects</a>
-    <a class="button secondary" href="/about">A little about Melo</a>
+<section class="hero" aria-labelledby="hero-heading">
+  <!-- Full-bleed 100vw x 100dvh atmospheric background -->
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-ambient"></div>
+    <div class="hero-dog-outline"></div>
+    <div class="hero-scrim"></div>
   </div>
-  <div class="hero-shelf" aria-label="Projects made by Tiny Melo">
-    <a
-      class="app-tile tile-tv"
-      href="#melotv"
-      aria-label="Explore Melo TV"
-      ><img src="/assets/melotv.svg" alt="" /><span>Melo TV</span></a
-    >
-    <a
-      class="app-tile tile-zip"
-      href="#zipmelo"
-      aria-label="Explore ZipMelo"
-      ><img src="/assets/zipmelo.png" alt="" /><span>ZipMelo</span></a
-    >
-    <div class="shelf-note">
-      two things<br />from my desk <span>⤴</span>
+
+  <!-- Foreground stage aligned to site container -->
+  <div class="hero-inner wrap">
+    <div class="hero-stage">
+      <p class="eyebrow">
+        <span class="little-line"></span> AN INDEPENDENT LITTLE STUDIO
+      </p>
+      <h1 id="hero-heading">
+        Little tools.<br /><span class="heart-line"
+          >A lot of <em>heart.</em></span
+        >
+      </h1>
+      <p class="hero-description">
+        A home for the things I make.<br />Thoughtful apps, useful tools, and
+        the occasional rabbit hole.
+      </p>
+      <div class="hero-actions">
+        <a class="button primary" href="#work">Meet the projects</a>
+        <a class="button secondary" href="/about">A little about Melo</a>
+      </div>
+      <div class="hero-shelf" aria-label="Projects made by Tiny Melo">
+        <a
+          class="app-tile tile-tv"
+          href="#melotv"
+          aria-label="Explore Melo TV"
+          ><img src="/assets/melotv.svg" alt="" /><span>Melo TV</span></a
+        >
+        <a
+          class="app-tile tile-zip"
+          href="#zipmelo"
+          aria-label="Explore ZipMelo"
+          ><img src="/assets/zipmelo.png" alt="" /><span>ZipMelo</span></a
+        >
+        <div class="shelf-note">
+          <span aria-hidden="true">↑</span> two things from my desk
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="hero-bottom">
-    <span>Small studio. Personal projects.</span><a href="#work"
-      >SCROLL TO EXPLORE <span>↓</span></a
-    ><span>Crafted with care by Melo</span>
+
+    <div class="hero-bottom">
+      <span>Small studio. Personal projects.</span><a href="#work"
+        >SCROLL TO EXPLORE <span>↓</span></a
+      ><span>Crafted with care by Melo</span>
+    </div>
   </div>
 </section>

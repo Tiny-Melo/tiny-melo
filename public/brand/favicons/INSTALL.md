@@ -10,4 +10,4 @@ Copy this entire folder to a website asset directory and update these paths to m
 <meta name="theme-color" content="#232821">
 ```
 
-The adaptive SVG changes between cream and charcoal with the browser color preference. Explicit light/dark SVGs are also supplied. The small PNGs use a tighter optical fit than profile avatars. The webmanifest's icon paths are relative to itself.
+The adaptive SVG changes between cream and charcoal with the browser color preference. This folder contains the icons used by the site; the complete export bundle remains in the local design sources. The webmanifest's icon paths are relative to itself.

@@ -1,6 +1,130 @@
+/* ==========================================================================
+   Tiny Melo — Full-Viewport (100vw × 100dvh) Open Atmospheric Hero
+   Full-bleed soft-focus golden retriever silhouette background, open cardless
+   editorial stage, and top clearance for the fixed Dynamic Island nav.
+   ========================================================================== */
+
 .hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  padding-top: 85px;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Full-Bleed Atmospheric Golden Retriever Background (100vw × 100dvh)
+   ========================================================================== */
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-ambient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 80% 65% at 50% 52%,
+      rgba(201, 150, 67, 0.12) 0%,
+      rgba(245, 199, 126, 0.06) 48%,
+      transparent 80%
+    ),
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(247, 244, 236, 0.75) 0%,
+      transparent 55%
+    );
+}
+
+html[data-theme="dark"] .hero-ambient {
+  background:
+    radial-gradient(
+      ellipse 75% 60% at 50% 52%,
+      rgba(201, 150, 67, 0.11) 0%,
+      rgba(217, 111, 93, 0.04) 48%,
+      transparent 78%
+    );
+}
+
+.hero-dog-outline {
+  position: absolute;
+  inset: -24px;
+  background: url("/assets/hero-melo-light.png") center / cover no-repeat;
+  opacity: 0.44;
+  filter: blur(6px) saturate(1.06);
+}
+
+html[data-theme="dark"] .hero-dog-outline {
+  background-image: url("/assets/hero-melo-dark.png");
+  opacity: 0.25;
+  filter: blur(8px) saturate(1.12) brightness(0.95);
+}
+
+/* Subtle central veil so foreground typography stays crisp over the silhouette */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      ellipse 42% 32% at 50% 42%,
+      rgba(255, 255, 255, 0.46) 0%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 84%,
+      var(--paper) 100%
+    );
+}
+
+html[data-theme="dark"] .hero-scrim {
+  background:
+    radial-gradient(
+      ellipse 42% 32% at 50% 42%,
+      rgba(0, 0, 0, 0.42) 0%,
+      transparent 100%
+    ),
+    linear-gradient(
+      to bottom,
+      transparent 84%,
+      var(--paper) 100%
+    );
+}
+
+/* ==========================================================================
+   Foreground Container & Stage (Accounts for Fixed 56px Dynamic Island Nav)
+   ========================================================================== */
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Clears the fixed 56px Dynamic Island at top: 0 with generous breathing room */
+  padding-top: clamp(92px, 10.5vh, 128px);
+}
+
+.hero-stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .hero .eyebrow {
@@ -8,6 +132,11 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+  margin-bottom: 0;
+}
+
+.hero h1 {
+  margin: clamp(20px, 2.6vh, 27px) auto clamp(18px, 2.4vh, 25px);
 }
 
 .heart-line em {
@@ -24,8 +153,14 @@ html[data-theme="dark"] .heart-line em {
 .hero-description {
   font-size: 16px;
   line-height: 1.65;
-  color: var(--muted);
-  margin-bottom: 28px;
+  color: var(--ink);
+  opacity: 0.78;
+  margin-bottom: clamp(22px, 3vh, 30px);
+}
+
+html[data-theme="dark"] .hero-description {
+  color: #d4d4d8;
+  opacity: 0.9;
 }
 
 .hero-actions {
@@ -34,23 +169,20 @@ html[data-theme="dark"] .heart-line em {
   gap: 12px;
 }
 
+/* ==========================================================================
+   Floating App Tiles Shelf
+   ========================================================================== */
+
 .hero-shelf {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 36px;
-  padding: 50px 0 48px;
+  padding: clamp(36px, 5vh, 54px) 0 clamp(36px, 4.8vh, 50px);
+  width: 100%;
   max-width: 760px;
-  margin: auto;
-}
-
-.hero-shelf:before {
-  content: "";
-  position: absolute;
-  inset: 40px 0 0;
-  background: radial-gradient(ellipse, #f5c77e45, transparent 68%);
-  z-index: -1;
+  margin: 0 auto;
 }
 
 .app-tile {
@@ -61,7 +193,7 @@ html[data-theme="dark"] .heart-line em {
   place-items: center;
   position: relative;
   box-shadow:
-    0 15px 35px #3e301b12,
+    0 15px 35px #3e301b18,
     inset 0 0 0 1px #ffffff66;
   transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
@@ -81,7 +213,9 @@ html[data-theme="dark"] .heart-line em {
   position: absolute;
   bottom: -25px;
   font-size: 11px;
-  color: var(--muted);
+  font-weight: 500;
+  color: var(--ink);
+  opacity: 0.78;
   letter-spacing: 0.2px;
 }
 
@@ -101,36 +235,42 @@ html[data-theme="dark"] .heart-line em {
 
 .shelf-note {
   position: absolute;
-  right: -33px;
-  bottom: 61px;
+  left: 50%;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
   font:
     italic 14px/1.3 Georgia,
     serif;
-  color: #7b776c;
-  text-align: left;
-  transform: rotate(-8deg);
+  color: #6e6659;
+  transform: translateX(-50%);
 }
 
 .shelf-note span {
-  position: absolute;
-  left: -36px;
-  top: -5px;
-  font-size: 33px;
+  font-size: 26px;
+  line-height: 1;
 }
 
 html[data-theme="dark"] .shelf-note {
-  color: #b0a998;
+  color: #c4bba8;
 }
+
+/* ==========================================================================
+   Bottom Floor Bar (Pinned to Bottom of 100dvh Viewport)
+   ========================================================================== */
 
 .hero-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--line);
-  padding: 35px 0 23px;
+  padding: 24px 0 22px;
   font-size: 10px;
   color: var(--muted);
-  margin-top: 20px;
+  width: 100%;
+  flex-shrink: 0;
 }
 
 .hero-bottom a {
@@ -144,14 +284,18 @@ html[data-theme="dark"] .shelf-note {
   font-size: 16px;
 }
 
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
 @media (min-width: 1500px) {
-  .hero {
-    padding-top: 90px;
+  .hero-inner {
+    padding-top: 112px;
   }
 
   .hero-shelf {
-    padding-top: 65px;
-    padding-bottom: 65px;
+    padding-top: 56px;
+    padding-bottom: 56px;
   }
 }
 
@@ -161,9 +305,25 @@ html[data-theme="dark"] .shelf-note {
   }
 }
 
+@media (min-width: 601px) and (max-height: 800px) {
+  .hero-shelf {
+    padding: 24px 0 30px;
+  }
+
+  .app-tile {
+    width: 96px;
+    height: 96px;
+    border-radius: 24px;
+  }
+}
+
 @media (max-width: 600px) {
-  .hero {
+  .hero-inner {
     padding-top: 86px;
+  }
+
+  .hero-dog-outline {
+    opacity: 0.38;
   }
 
   .heart-line em {
@@ -181,7 +341,7 @@ html[data-theme="dark"] .shelf-note {
 
   .hero-shelf {
     gap: 25px;
-    padding: 55px 0 45px;
+    padding: 46px 0 42px;
   }
 
   .app-tile {
@@ -200,15 +360,15 @@ html[data-theme="dark"] .shelf-note {
   }
 
   .hero-bottom {
-    padding-top: 30px;
+    padding-top: 24px;
     margin-top: 0;
   }
 
-  .hero-bottom>span:last-child {
+  .hero-bottom > span:last-child {
     display: none;
   }
 
-  .hero-bottom>span {
+  .hero-bottom > span {
     font-size: 9px;
   }
 
@@ -225,4 +385,3 @@ html[data-theme="dark"] .shelf-note {
     gap: 10px;
   }
 }
-

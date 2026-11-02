@@ -7,21 +7,23 @@ export function initHomeAnimations() {
   const motion = gsap.matchMedia();
 
   motion.add("(prefers-reduced-motion: no-preference)", () => {
-    gsap.from(".hero h1, .hero-description, .hero-actions", {
+    gsap.from(".hero .eyebrow, .hero h1, .hero-description, .hero-actions", {
       y: 25,
       opacity: 0,
       duration: 0.9,
-      stagger: 0.12,
+      stagger: 0.1,
       ease: "power3.out",
+      clearProps: "transform",
     });
 
     gsap.from(".app-tile", {
-      y: 45,
+      y: 35,
       opacity: 0,
-      duration: 1.1,
+      duration: 1.0,
       stagger: 0.1,
-      delay: 0.3,
+      delay: 0.2,
       ease: "power3.out",
+      clearProps: "transform",
     });
 
     gsap.utils
@@ -81,4 +83,3 @@ export function initHomeAnimations() {
     }
   });
 }
-
