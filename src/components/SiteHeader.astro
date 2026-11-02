@@ -8,29 +8,34 @@ const { active } = Astro.props;
 
 <header class="island-header">
   <div class="island-notch">
-    <!-- Top-Left Concave Ear Flare -->
+    <!-- Left S-Curve Cap: Seamless transition from ceiling to floor -->
     <svg
-      class="island-ear island-ear-left"
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      class="island-cap island-cap-left"
+      width="36"
+      height="48"
+      viewBox="0 0 36 48"
+      preserveAspectRatio="none"
       aria-hidden="true"
     >
-      <path d="M0 0 Q20 0 20 20 L20 0 Z" fill="#000000"></path>
       <path
-        d="M0 0 Q20 0 20 20"
+        d="M 0 0 C 12 0, 18 12, 18 24 C 18 36, 24 48, 36 48 L 36 0 Z"
+        fill="#000000"
+      ></path>
+      <path
+        d="M 0 0.5 C 12 0.5, 18 12, 18 24 C 18 36, 24 47.5, 36 47.5"
         fill="none"
-        stroke="rgba(255, 255, 255, 0.14)"
-        stroke-width="1"></path>
+        stroke="rgba(255, 255, 255, 0.16)"
+        stroke-width="1"
+      ></path>
     </svg>
 
-    <!-- Dynamic Island Body -->
+    <!-- Center Island Body: One continuous black slab with bottom border -->
     <div class="island-body">
       <a href="/" class="island-brand" aria-label="Tiny Melo home">
         <img
           src="/brand/logos/primary-horizontal-reverse.svg"
-          width="116"
-          height="28"
+          width="112"
+          height="26"
           alt="Tiny Melo"
         />
       </a>
@@ -40,7 +45,8 @@ const { active } = Astro.props;
         <a
           href="/about"
           class="island-link"
-          aria-current={active === "about" ? "page" : undefined}>The human</a
+          aria-current={active === "about" ? "page" : undefined}
+          >The human</a
         >
         <a
           href="https://github.com/tinymelo"
@@ -67,7 +73,8 @@ const { active } = Astro.props;
           stroke-linecap="round"
           stroke-linejoin="round"
           aria-hidden="true"
-          ><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"></path></svg
+          ><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"
+          ></path></svg
         >
         <svg
           class="theme-sun"
@@ -86,20 +93,25 @@ const { active } = Astro.props;
       </button>
     </div>
 
-    <!-- Top-Right Concave Ear Flare -->
+    <!-- Right S-Curve Cap: Seamless transition from floor back to ceiling -->
     <svg
-      class="island-ear island-ear-right"
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
+      class="island-cap island-cap-right"
+      width="36"
+      height="48"
+      viewBox="0 0 36 48"
+      preserveAspectRatio="none"
       aria-hidden="true"
     >
-      <path d="M0 20 Q0 0 20 0 L0 0 Z" fill="#000000"></path>
       <path
-        d="M0 20 Q0 0 20 0"
+        d="M 0 48 C 12 48, 18 36, 18 24 C 18 12, 24 0, 36 0 L 0 0 Z"
+        fill="#000000"
+      ></path>
+      <path
+        d="M 0 47.5 C 12 47.5, 18 36, 18 24 C 18 12, 24 0.5, 36 0.5"
         fill="none"
-        stroke="rgba(255, 255, 255, 0.14)"
-        stroke-width="1"></path>
+        stroke="rgba(255, 255, 255, 0.16)"
+        stroke-width="1"
+      ></path>
     </svg>
   </div>
 </header>

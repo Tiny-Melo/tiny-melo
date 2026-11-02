@@ -1,6 +1,7 @@
 /* ==========================================================================
    iPhone Dynamic Island Header
-   Anchored directly to the top edge with inverted concave curves (ears)
+   Unified continuous S-curve geometry from ceiling into island floor.
+   No vertical edge cuts. One full continuous piece.
    ========================================================================== */
 
 .island-header {
@@ -15,43 +16,44 @@
 }
 
 .island-notch {
-  position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: stretch;
   pointer-events: auto;
-  filter: drop-shadow(0 12px 30px rgba(0, 0, 0, 0.32))
-          drop-shadow(0 2px 6px rgba(0, 0, 0, 0.18));
+  filter: drop-shadow(0 14px 34px rgba(0, 0, 0, 0.35))
+          drop-shadow(0 2px 6px rgba(0, 0, 0, 0.2));
+  max-width: 100vw;
 }
 
-.island-ear {
-  position: absolute;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  pointer-events: none;
+.island-cap {
   display: block;
+  flex-shrink: 0;
+  height: 48px;
 }
 
-.island-ear-left {
-  left: -19.5px;
+.island-cap-left {
+  margin-right: -1px;
+  position: relative;
+  z-index: 1;
 }
 
-.island-ear-right {
-  right: -19.5px;
+.island-cap-right {
+  margin-left: -1px;
+  position: relative;
+  z-index: 1;
 }
 
 .island-body {
   background: #000000;
   color: #f6f5ee;
-  height: 50px;
-  padding: 0 20px;
-  border-radius: 0 0 24px 24px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  height: 48px;
+  padding: 0 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   border-top: none;
+  border-left: none;
+  border-right: none;
   display: flex;
   align-items: center;
-  gap: 24px;
-  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+  gap: 20px;
 }
 
 /* ==========================================================================
@@ -74,7 +76,7 @@
 .island-nav {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3px;
 }
 
 .island-link {
@@ -83,8 +85,9 @@
   color: #a1a1aa;
   text-decoration: none;
   letter-spacing: -0.01em;
-  padding: 6px 12px;
+  padding: 5px 12px;
   border-radius: 100px;
+  white-space: nowrap;
   transition:
     color 0.18s ease,
     background-color 0.18s ease;
@@ -108,8 +111,8 @@
 .theme-toggle {
   display: grid;
   place-items: center;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   flex-shrink: 0;
   padding: 0;
   border: 1px solid rgba(255, 255, 255, 0.14);
@@ -152,14 +155,19 @@ html[data-theme="dark"] .theme-sun {
    ========================================================================== */
 
 @media (max-width: 640px) {
+  .island-cap {
+    width: 26px;
+    height: 46px;
+  }
+
   .island-body {
     height: 46px;
-    padding: 0 14px;
-    gap: 12px;
+    gap: 8px;
+    padding: 0 4px;
   }
 
   .island-brand img {
-    height: 20px;
+    height: 19px;
   }
 
   .island-nav {
@@ -168,7 +176,7 @@ html[data-theme="dark"] .theme-sun {
 
   .island-link {
     font-size: 11.5px;
-    padding: 4px 8px;
+    padding: 4px 7px;
   }
 
   .theme-toggle {
@@ -177,22 +185,19 @@ html[data-theme="dark"] .theme-sun {
   }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 380px) {
+  .island-cap {
+    width: 20px;
+    height: 44px;
+  }
+
+  .island-body {
+    height: 44px;
+    gap: 6px;
+  }
+
   .island-link {
     font-size: 10.5px;
-    padding: 3px 6px;
-  }
-
-  .island-ear {
-    width: 14px;
-    height: 14px;
-  }
-
-  .island-ear-left {
-    left: -13.5px;
-  }
-
-  .island-ear-right {
-    right: -13.5px;
+    padding: 3px 5px;
   }
 }
