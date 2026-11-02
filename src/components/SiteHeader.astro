@@ -6,36 +6,45 @@ interface Props {
 const { active } = Astro.props;
 ---
 
-<header class="site-header">
-  <div class="header-inner wrap">
-    <a href="/" class="brand" aria-label="Tiny Melo home">
-      <img
-        class="brand-logo brand-logo-light"
-        src="/brand/logos/primary-horizontal-brand.svg"
-        width="135"
-        height="33"
-        alt="Tiny Melo"
-      />
-      <img
-        class="brand-logo brand-logo-dark"
-        src="/brand/logos/primary-horizontal-reverse.svg"
-        width="135"
-        height="33"
-        alt="Tiny Melo"
-      />
-    </a>
+<header class="island-header">
+  <div class="island-notch">
+    <!-- Top-Left Concave Ear Flare -->
+    <svg
+      class="island-ear island-ear-left"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+    >
+      <path d="M0 0 Q20 0 20 20 L20 0 Z" fill="#000000"></path>
+      <path
+        d="M0 0 Q20 0 20 20"
+        fill="none"
+        stroke="rgba(255, 255, 255, 0.14)"
+        stroke-width="1"></path>
+    </svg>
 
-    <div class="header-right">
-      <nav class="site-nav" aria-label="Main navigation">
-        <a href="/#work" class="nav-item">The projects</a>
+    <!-- Dynamic Island Body -->
+    <div class="island-body">
+      <a href="/" class="island-brand" aria-label="Tiny Melo home">
+        <img
+          src="/brand/logos/primary-horizontal-reverse.svg"
+          width="116"
+          height="28"
+          alt="Tiny Melo"
+        />
+      </a>
+
+      <nav class="island-nav" aria-label="Main navigation">
+        <a href="/#work" class="island-link">The projects</a>
         <a
           href="/about"
-          class="nav-item"
+          class="island-link"
           aria-current={active === "about" ? "page" : undefined}>The human</a
         >
         <a
           href="https://github.com/tinymelo"
-          class="nav-item"
+          class="island-link"
           target="_blank"
           rel="noreferrer">GitHub</a
         >
@@ -50,11 +59,11 @@ const { active } = Astro.props;
         <svg
           class="theme-moon"
           viewBox="0 0 24 24"
-          width="15"
-          height="15"
+          width="14"
+          height="14"
           fill="none"
           stroke="currentColor"
-          stroke-width="1.6"
+          stroke-width="1.8"
           stroke-linecap="round"
           stroke-linejoin="round"
           aria-hidden="true"
@@ -63,11 +72,11 @@ const { active } = Astro.props;
         <svg
           class="theme-sun"
           viewBox="0 0 24 24"
-          width="15"
-          height="15"
+          width="14"
+          height="14"
           fill="none"
           stroke="currentColor"
-          stroke-width="1.6"
+          stroke-width="1.8"
           stroke-linecap="round"
           aria-hidden="true"
           ><circle cx="12" cy="12" r="4"></circle><path
@@ -76,6 +85,22 @@ const { active } = Astro.props;
         >
       </button>
     </div>
+
+    <!-- Top-Right Concave Ear Flare -->
+    <svg
+      class="island-ear island-ear-right"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      aria-hidden="true"
+    >
+      <path d="M0 20 Q0 0 20 0 L0 0 Z" fill="#000000"></path>
+      <path
+        d="M0 20 Q0 0 20 0"
+        fill="none"
+        stroke="rgba(255, 255, 255, 0.14)"
+        stroke-width="1"></path>
+    </svg>
   </div>
 </header>
 <script>
