@@ -2,118 +2,55 @@
 import "../styles/components/footer.css";
 
 interface Props {
-  eyebrow?: string;
   heading?: string;
   subheading?: string;
 }
 
 const {
-  eyebrow = "ALWAYS TINKERING",
-  heading = "See you around<br />the workbench",
-  subheading = "Building independent tools with care, craft, and a lot of heart.",
+  heading = "See you around",
+  subheading = "Independent apps, tools, and experiments by Christopher & Melo.",
 } = Astro.props;
 ---
 
-<footer class="footer">
-  <div class="footer-ambient" aria-hidden="true"></div>
-  <img
-    class="footer-watermark"
-    src="/brand/logos/dog-reverse.svg"
-    alt=""
-    aria-hidden="true"
-    loading="lazy"
-  />
-  <div class="wrap footer-wrap">
-    <div class="footer-hero">
-      <div class="footer-hero-copy">
-        <p class="eyebrow footer-eyebrow">
-          <span class="status-pulse" aria-hidden="true"></span>
-          <span>{eyebrow}</span>
-        </p>
-        <h2>
-          <Fragment set:html={heading} /><span>.</span>
-        </h2>
-        <p class="footer-subheading">{subheading}</p>
-      </div>
-      <div class="footer-hero-actions">
-        <a
-          class="button primary"
-          href="https://github.com/tinymelo"
-          target="_blank"
-          rel="noreferrer">Follow on GitHub</a>
-        <a class="button secondary" href="/about">About the studio</a>
-      </div>
+<footer class="footer wrap">
+  <div class="footer-top">
+    <div class="footer-message">
+      <h2><Fragment set:html={heading} /><span>.</span></h2>
+      <p>{subheading}</p>
     </div>
-
-    <div class="footer-grid">
-      <div class="footer-col">
-        <p class="footer-col-title">PROJECTS</p>
-        <ul class="footer-links">
-          <li>
-            <a
-              href="https://github.com/ChrisRodStar/Mello-Tv"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>Melo TV</span>
-              <span class="footer-tag">Streaming</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/ChrisRodStar/zipmelo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>ZipMelo</span>
-              <span class="footer-tag">Swift 6</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/tinymelo"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span>GitHub</span>
-              <span class="footer-tag">Open Source</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <p class="footer-col-title">STUDIO</p>
-        <ul class="footer-links">
-          <li><a href="/#work">The Workbench</a></li>
-          <li><a href="/about">The Human Behind It</a></li>
-          <li><a href="/#studio">Melo the Dog</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-colophon">
-        <p class="footer-col-title">COLOPHON</p>
-        <p class="colophon-text">
-          Designed & crafted by Christopher.<br />
-          Built with Astro, TypeScript, and GSAP.<br />
-          Zero trackers, zero ads.
-        </p>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <a href="/" class="brand" aria-label="Tiny Melo">
-        <img
-          src="/brand/logos/primary-horizontal-reverse.svg"
-          width="135"
-          height="33"
-          alt="Tiny Melo"
-        />
-      </a>
-      <span class="footer-copy"
-        >© {new Date().getFullYear()} Tiny Melo. Little tools. A lot of heart.</span
+    <div class="footer-action">
+      <a
+        class="button secondary"
+        href="https://github.com/tinymelo"
+        target="_blank"
+        rel="noreferrer">Follow on GitHub</a
       >
-      <a class="back-to-top" href="#">Back to the top</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="/" class="brand" aria-label="Tiny Melo">
+      <img
+        class="brand-logo brand-logo-light"
+        src="/brand/logos/primary-horizontal-brand.svg"
+        width="128"
+        height="31"
+        alt="Tiny Melo"
+      />
+      <img
+        class="brand-logo brand-logo-dark"
+        src="/brand/logos/primary-horizontal-reverse.svg"
+        width="128"
+        height="31"
+        alt="Tiny Melo"
+      />
+    </a>
+    <div class="footer-meta">
+      <span>© {new Date().getFullYear()} Tiny Melo</span>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <a href="/about" class="footer-link">The human</a>
+      <span class="footer-dot" aria-hidden="true">·</span>
+      <a href="#" class="back-to-top">Back to top</a>
     </div>
   </div>
 </footer>

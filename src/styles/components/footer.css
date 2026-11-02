@@ -1,340 +1,127 @@
 .footer {
-  background: radial-gradient(ellipse 90% 60% at 50% 0%, #1e241c 0%, #0d100d 100%);
-  color: var(--paper);
-  padding: 105px 0 0;
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--line);
+  padding-top: 76px;
+  padding-bottom: 44px;
+  background: var(--paper);
 }
 
-.footer-ambient {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 900px;
-  height: 280px;
-  background: radial-gradient(ellipse at center, rgba(201, 150, 67, 0.08), transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.footer-watermark {
-  position: absolute;
-  right: -50px;
-  bottom: -30px;
-  width: 460px;
-  height: auto;
-  opacity: 0.035;
-  pointer-events: none;
-  z-index: 0;
-  user-select: none;
-}
-
-.footer-wrap {
-  position: relative;
-  z-index: 1;
-}
-
-/* ==========================================================================
-   Footer Hero / Farewell Callout
-   ========================================================================== */
-
-.footer-hero {
+.footer-top {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  gap: 48px;
-  padding-bottom: 70px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 32px;
 }
 
-.footer-hero-copy {
-  max-width: 680px;
-}
-
-.footer-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: #b2b8a5;
-  margin-bottom: 8px;
-}
-
-.status-pulse {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #22c55e;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
-  display: inline-block;
-  animation: pulse 2.4s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.85;
-  }
-  50% {
-    transform: scale(1.35);
-    opacity: 1;
-    box-shadow: 0 0 14px rgba(34, 197, 94, 1);
-  }
-}
-
-.footer-hero h2 {
-  font-size: clamp(48px, 6.2vw, 88px);
-  line-height: 1.05;
-  letter-spacing: -4px;
+.footer-message h2 {
+  font-size: clamp(32px, 3.6vw, 46px);
   font-weight: 500;
-  margin: 16px 0 18px;
-  color: #ffffff;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--ink);
 }
 
-.footer-hero h2 > span {
+.footer-message h2 > span {
   color: var(--gold);
 }
 
-.footer-subheading {
-  font-size: 16px;
-  line-height: 1.65;
-  color: #9ea497;
-  max-width: 520px;
+.footer-message p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
   margin: 0;
+  max-width: 480px;
 }
 
-.footer-hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.footer-action {
   flex-shrink: 0;
-  margin-bottom: 6px;
 }
-
-.footer .button.primary {
-  background: var(--gold);
-  color: #1a1c17;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.4),
-    0 1px 2px rgba(0, 0, 0, 0.25),
-    0 3px 10px rgba(0, 0, 0, 0.2);
-}
-
-.footer .button.primary:hover {
-  background: #dbaa55;
-  border-color: rgba(255, 255, 255, 0.35);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.5),
-    0 4px 16px rgba(201, 150, 67, 0.35);
-}
-
-.footer .button.secondary {
-  background: rgba(255, 255, 255, 0.06);
-  color: #f6f5ee;
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.08),
-    0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.footer .button.secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.24);
-  color: #ffffff;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.12),
-    0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* ==========================================================================
-   Footer Sitemap Grid
-   ========================================================================== */
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1.2fr 1.6fr;
-  gap: 60px;
-  padding: 56px 0 64px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-}
-
-.footer-col-title {
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  color: var(--gold);
-  margin: 0 0 20px;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-}
-
-.footer-links li a {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 13.5px;
-  color: #b0b7a9;
-  text-decoration: none;
-  transition:
-    color 0.18s ease,
-    transform 0.18s ease;
-}
-
-.footer-links li a:hover {
-  color: #ffffff;
-  transform: translateX(3px);
-}
-
-.footer-tag {
-  font-size: 9.5px;
-  padding: 2px 7px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.06);
-  color: #8c9384;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  font-weight: 500;
-  letter-spacing: 0.2px;
-}
-
-.colophon-text {
-  font-size: 13.5px;
-  line-height: 1.7;
-  color: #8b9283;
-  margin: 0;
-}
-
-/* ==========================================================================
-   Footer Bottom Bar
-   ========================================================================== */
 
 .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 0 40px;
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+  margin-top: 60px;
 }
 
-.footer-bottom .brand img {
+.footer-bottom .brand .brand-logo {
   height: 28px;
   width: auto;
-  opacity: 0.9;
-  transition: opacity 0.2s ease;
+  display: block;
 }
 
-.footer-bottom .brand:hover img {
-  opacity: 1;
+.footer-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
 }
 
-.footer-copy {
-  font-size: 11.5px;
-  color: #7b8275;
+.footer-dot {
+  color: var(--line);
 }
 
+.footer-link,
 .back-to-top {
-  font-size: 11.5px;
-  color: #9ea497;
+  color: var(--muted);
   text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-color: rgba(255, 255, 255, 0.2);
+  text-underline-offset: 3px;
+  text-decoration-color: transparent;
   transition:
     color 0.18s ease,
     text-decoration-color 0.18s ease;
 }
 
+.footer-link:hover,
 .back-to-top:hover {
-  color: var(--gold);
-  text-decoration-color: var(--gold);
+  color: var(--ink);
+  text-decoration-color: var(--ink);
 }
 
-/* ==========================================================================
-   Dark Mode & Responsive
-   ========================================================================== */
+@media (max-width: 680px) {
+  .footer {
+    padding-top: 52px;
+    padding-bottom: 32px;
+  }
 
-html[data-theme="dark"] .footer {
-  background: radial-gradient(ellipse 90% 60% at 50% 0%, #171c15 0%, #080a08 100%);
-  border-top-color: rgba(255, 255, 255, 0.06);
-}
-
-@media (max-width: 900px) {
-  .footer-hero {
+  .footer-top {
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
+    gap: 24px;
   }
 
-  .footer-hero h2 {
-    letter-spacing: -3px;
+  .footer-message h2 {
+    font-size: 32px;
+    letter-spacing: -1.4px;
   }
 
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
-
-  .footer-col-colophon {
-    grid-column: span 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer {
-    padding-top: 65px;
-  }
-
-  .footer-hero {
-    padding-bottom: 48px;
-  }
-
-  .footer-hero h2 {
-    font-size: clamp(38px, 9.8vw, 54px);
-    letter-spacing: -2.4px;
-    margin: 14px 0;
-  }
-
-  .footer-subheading {
+  .footer-message p {
     font-size: 14px;
   }
 
-  .footer-hero-actions {
+  .footer-action {
     width: 100%;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
   }
 
-  .footer-hero-actions .button {
+  .footer-action .button {
     width: 100%;
     justify-content: center;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    padding: 38px 0;
-  }
-
-  .footer-col-colophon {
-    grid-column: span 1;
   }
 
   .footer-bottom {
     flex-direction: column;
     align-items: flex-start;
     gap: 18px;
-    padding: 24px 0 32px;
+    margin-top: 40px;
+    padding-top: 22px;
   }
 
-  .footer-watermark {
-    display: none;
+  .footer-meta {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    font-size: 11px;
   }
 }
