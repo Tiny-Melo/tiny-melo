@@ -61,12 +61,30 @@ html[data-theme="dark"] .brand-dot {
 
 .nav-link {
   font-size: 13px;
-  border-bottom: 1px solid var(--ink);
-  padding: 8px 0;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+  transition:
+    color 0.18s,
+    text-decoration-color 0.18s;
 }
 
-.nav-link span {
-  padding-left: 20px;
+.nav-link:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+  opacity: 1;
+}
+
+html[data-theme="dark"] .nav-link {
+  color: var(--ink);
+  text-decoration-color: rgba(255, 255, 255, 0.25);
+}
+
+html[data-theme="dark"] .nav-link:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
 }
 
 .nav-actions {

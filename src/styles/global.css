@@ -52,8 +52,8 @@ button {
 
 button:focus-visible,
 a:focus-visible {
-  outline: 3px solid #996011;
-  outline-offset: 6px;
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 button[hidden],
@@ -82,7 +82,8 @@ main {
   position: fixed;
   top: -80px;
   left: 20px;
-  padding: 12px;
+  padding: 12px 18px;
+  border-radius: 8px;
   background: var(--ink);
   color: white;
   z-index: 100;
@@ -137,90 +138,149 @@ html[data-theme="dark"] .gold {
   color: var(--gold);
 }
 
+/* ==========================================================================
+   Buttons — Refined, Tactile, No Clutter
+   ========================================================================== */
+
 .button {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 38px;
-  min-height: 50px;
-  padding: 15px 23px;
-  border-radius: 100px;
-  font-size: 13px;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 24px;
+  border-radius: 11px;
+  font-size: 13.5px;
   font-weight: 500;
+  letter-spacing: -0.01em;
   white-space: nowrap;
+  user-select: none;
+  cursor: pointer;
+  text-decoration: none;
+  border: 1px solid transparent;
   transition:
-    background 0.25s,
-    transform 0.25s;
+    background-color 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+    box-shadow 0.18s cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-1px);
 }
 
+.button:active {
+  transform: translateY(1px) scale(0.985);
+  transition-duration: 0.08s;
+}
+
+/* Primary Button — Deep obsidian with subtle specular highlight */
 .primary {
-  background: var(--ink);
-  color: white;
+  background: #181917;
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.25);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.16),
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .primary:hover {
-  background: #3b3d36;
+  background: #272a25;
+  border-color: rgba(0, 0, 0, 0.35);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 3px 8px rgba(0, 0, 0, 0.12);
 }
 
 html[data-theme="dark"] .primary {
-  color: #232821;
+  background: #f6f5ee;
+  color: #121311;
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 html[data-theme="dark"] .primary:hover {
-  background: var(--gold);
+  background: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 4px 12px rgba(255, 255, 255, 0.15);
 }
 
+/* Secondary Button — Refined surface plate */
 .secondary {
-  border: 1px solid #cfcfc5;
-  background: transparent;
+  background: #ffffff;
   color: var(--ink);
+  border-color: #dcdcd3;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 .secondary:hover {
-  background: #eeeade;
+  background: #fbf9f5;
+  border-color: #c4c4b8;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 html[data-theme="dark"] .secondary {
-  border-color: #494949;
+  background: #151618;
+  color: var(--ink);
+  border-color: #2a2b2e;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 html[data-theme="dark"] .secondary:hover {
-  background: #1c1c1c;
+  background: #1f2023;
+  border-color: #3b3c41;
 }
 
+/* Text Links — Clean, natural, underlined on hover */
 .text-link {
   border: 0;
   background: none;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 32px;
   font-size: 13px;
   font-weight: 500;
-  padding: 8px 0;
-  border-bottom: 1px solid #0005;
-  align-self: flex-start;
-  transition: gap 0.3s;
+  padding: 4px 0;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition:
+    color 0.18s ease,
+    text-decoration-color 0.18s ease;
 }
 
 .text-link:hover {
-  gap: 43px;
+  color: var(--gold);
+  text-decoration-color: var(--gold);
 }
 
 html[data-theme="dark"] .text-link {
-  border-color: #ffffff50;
+  color: var(--ink);
+  text-decoration-color: rgba(255, 255, 255, 0.25);
 }
 
+html[data-theme="dark"] .text-link:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
+
+/* Status Chip */
 .status {
   letter-spacing: 0;
   font-size: 10px;
   border: 1px solid #0002;
   border-radius: 100px;
-  padding: 6px 10px;
+  padding: 5px 10px;
   white-space: nowrap;
 }
 
@@ -228,7 +288,7 @@ html[data-theme="dark"] .status {
   border-color: #ffffff35;
 }
 
-/* SVG arrows stay monochrome across iOS and other platforms. */
+/* SVG arrows utility (only when explicitly needed for carousel controls) */
 .arrow-icon {
   display: inline-block;
   width: 1em;
@@ -265,10 +325,9 @@ html[data-theme="dark"] .status {
   }
 
   .button {
-    min-height: 46px;
-    padding: 14px 17px;
-    gap: 14px;
-    font-size: 11px;
+    min-height: 42px;
+    padding: 10px 18px;
+    font-size: 12px;
   }
 }
 
