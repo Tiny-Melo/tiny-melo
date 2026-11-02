@@ -299,19 +299,14 @@ h1 {
   letter-spacing: 0.2px;
 }
 
-.tile-reader {
-  background: #191d1f;
-  transform: rotate(-11deg) translateY(10px);
+.tile-tv {
+  background: #18191d;
+  transform: rotate(-7deg) translateY(6px);
 }
 
-.tile-voice {
-  background: #f5c77e;
-  transform: rotate(6deg) translateY(-9px);
-}
-
-.tile-brew {
-  background: #fff;
-  transform: rotate(-5deg) translateY(12px);
+.tile-zip {
+  background: #f0e7d8;
+  transform: rotate(6deg) translateY(-6px);
 }
 
 .app-tile:hover {
@@ -413,8 +408,117 @@ h1 {
   min-height: 430px;
 }
 
-.reader-card {
-  background: #e9ebdf;
+.tv-card {
+  background: #18191d;
+  color: #f7f4ec;
+}
+
+.tv-card .card-copy p {
+  color: #a4a7b0;
+}
+
+.tv-card .card-meta {
+  color: #9297a5;
+}
+
+.tv-card .status {
+  border-color: #ffffff30;
+  color: #f7f4ec;
+}
+
+.tv-card .text-link {
+  color: #f7f4ec;
+  border-bottom-color: #ffffff50;
+}
+
+.tv-card .platform {
+  color: #838896;
+}
+
+.tv-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at center, #262933, #121316);
+  overflow: hidden;
+  margin: 18px;
+  border-radius: 12px;
+}
+
+.tv-art>img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.tv-card:hover .tv-art>img {
+  transform: scale(1.05) translateY(-4px);
+}
+
+.tv-art .art-caption {
+  position: absolute;
+  bottom: 25px;
+  left: 26px;
+  right: 26px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #9da3b4;
+}
+
+.tv-art .art-caption span:last-child {
+  font:
+    italic 12px Georgia,
+    serif;
+  letter-spacing: 0;
+  color: #c5cbd8;
+}
+
+.zip-card {
+  background: #f0e7d8;
+  color: var(--ink);
+}
+
+.zip-art {
+  background: #e9dcc5;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  margin: 18px;
+  border-radius: 12px;
+  min-height: 280px;
+}
+
+.zip-art>img {
+  position: absolute;
+  right: 20px;
+  bottom: -20px;
+  width: 280px;
+  box-shadow: none;
+  transform: rotate(-6deg);
+  z-index: 1;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.zip-card:hover .zip-art>img {
+  transform: rotate(0) scale(1.05);
+}
+
+.zip-type {
+  font-size: 72px;
+  line-height: 0.95;
+  font-weight: 500;
+  letter-spacing: -3px;
+  position: absolute;
+  left: 33px;
+  top: 30px;
+  color: #8b6a39;
 }
 
 .card-copy {
@@ -483,199 +587,7 @@ h1 {
   padding-top: 35px;
 }
 
-.reader-art {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #dde0cf;
-  overflow: hidden;
-  margin: 18px;
-  border-radius: 12px;
-}
 
-.reader-art>img {
-  width: 280px;
-  height: 280px;
-  object-fit: contain;
-  transform: rotate(-13deg);
-  filter: drop-shadow(0 16px 24px #70634522);
-  transition: transform 0.7s;
-}
-
-.reader-card:hover .reader-art>img {
-  transform: rotate(-3deg) scale(1.05);
-}
-
-.reader-orbit {
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  border: 1px solid #adb39880;
-  border-radius: 50%;
-}
-
-.reader-orbit:after {
-  content: "";
-  position: absolute;
-  inset: 35px;
-  border: 1px solid #adb39850;
-  border-radius: 50%;
-}
-
-.art-caption {
-  position: absolute;
-  bottom: 25px;
-  left: 26px;
-  right: 26px;
-  display: flex;
-  justify-content: space-between;
-  font-size: 9px;
-  letter-spacing: 1.5px;
-}
-
-.art-caption span:last-child {
-  font:
-    italic 12px Georgia,
-    serif;
-  letter-spacing: 0;
-}
-
-.voice-card {
-  background: #f4deba;
-}
-
-.voice-art {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
-  background: radial-gradient(ellipse, #fff1d8, #f4deba 70%);
-  margin: 18px;
-  border-radius: 12px;
-}
-
-.voice-mark {
-  width: 118px;
-  height: 118px;
-  object-fit: contain;
-  margin-bottom: 22px;
-  transition: transform 0.7s;
-}
-
-.voice-card:hover .voice-mark {
-  transform: scale(1.05) rotate(5deg);
-}
-
-.waveform {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  height: 68px;
-}
-
-.waveform i {
-  height: var(--height);
-  width: 4px;
-  background: #b17c40;
-  border-radius: 10px;
-  animation: wave 2s ease-in-out var(--delay) infinite alternate;
-}
-
-.voice-caption {
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.45;
-  margin-top: 24px;
-  color: #967447;
-}
-
-.voice-caption strong {
-  color: #352c1d;
-  font-weight: 500;
-}
-
-.small-art {
-  height: 320px;
-  overflow: hidden;
-  background: #e5e9ed;
-  padding: 35px 35px 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.small-art>img {
-  width: 83%;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 15px 35px #15212b20;
-  transition: transform 0.7s;
-}
-
-.brew-card {
-  background: #eef0f2;
-}
-
-.brew-card:hover .small-art>img {
-  transform: scale(1.04) translateY(-6px);
-}
-
-.small-copy {
-  padding: 30px 35px 35px;
-}
-
-.small-copy h3 {
-  font-size: 35px;
-  font-weight: 500;
-  letter-spacing: -1.5px;
-  margin: 22px 0 8px;
-}
-
-.small-copy p {
-  font-size: 14px;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-.zip-card {
-  background: #f0e7d8;
-}
-
-.zip-art {
-  background: #e9dcc5;
-  position: relative;
-  align-items: flex-end;
-  padding: 0;
-}
-
-.zip-art>img {
-  position: absolute;
-  right: -18px;
-  bottom: -36px;
-  width: 265px;
-  box-shadow: none;
-  transform: rotate(-8deg);
-  z-index: 1;
-}
-
-.zip-card:hover img {
-  transform: rotate(0) scale(1.05);
-}
-
-.zip-type {
-  font-size: 62px;
-  line-height: 0.98;
-  font-weight: 500;
-  letter-spacing: -3px;
-  position: absolute;
-  left: 33px;
-  top: 30px;
-  color: #8b6a39;
-}
 
 .work-footnote {
   text-align: center;
@@ -1060,13 +972,9 @@ dialog::backdrop {
     font-size: 40px;
   }
 
-  .reader-art>img {
-    width: 220px;
-  }
-
-  .reader-orbit {
-    width: 310px;
-    height: 310px;
+  .tv-art>img {
+    width: 200px;
+    height: 200px;
   }
 
   .art-caption {
@@ -1265,35 +1173,14 @@ dialog::backdrop {
     padding-top: 18px;
   }
 
-  .reader-art,
-  .voice-art {
+  .tv-art {
     height: 280px;
     margin: 0 12px 12px;
   }
 
-  .reader-art>img {
-    width: 220px;
-    height: 220px;
-  }
-
-  .art-caption {
-    font-size: 8px;
-  }
-
-  .voice-mark {
-    width: 90px;
-    height: 90px;
-    margin-bottom: 10px;
-  }
-
-  .voice-caption {
-    margin-top: 12px;
-    font-size: 16px;
-  }
-
-  .small-art {
-    height: 280px;
-    padding-top: 28px;
+  .tv-art>img {
+    width: 200px;
+    height: 200px;
   }
 
   .zip-art {
@@ -1468,18 +1355,7 @@ dialog::backdrop {
   }
 }
 
-.reader-art {
-  background: radial-gradient(ellipse at center, #354033, #1c241e);
-  color: #e9ebdf;
-}
 
-.reader-orbit {
-  border-color: #b6c49b30;
-}
-
-.reader-orbit:after {
-  border-color: #b6c49b20;
-}
 
 /* Both themes share the same layout and brand accents. */
 :root {
@@ -1560,16 +1436,12 @@ html[data-theme="dark"] .little-line {
   background: var(--gold);
 }
 
-html[data-theme="dark"] .reader-card {
-  background: #161d16;
+html[data-theme="dark"] .tv-card {
+  background: #121316;
 }
 
-html[data-theme="dark"] .voice-card {
-  background: #241e15;
-}
-
-html[data-theme="dark"] .brew-card {
-  background: #171a1e;
+html[data-theme="dark"] .tv-art {
+  background: radial-gradient(ellipse at center, #232630, #0f1013 75%);
 }
 
 html[data-theme="dark"] .zip-card {
@@ -1587,26 +1459,6 @@ html[data-theme="dark"] .status {
 
 html[data-theme="dark"] .text-link {
   border-color: #ffffff50;
-}
-
-html[data-theme="dark"] .voice-art {
-  background: radial-gradient(ellipse, #3c301e, #241e15 75%);
-}
-
-html[data-theme="dark"] .waveform i {
-  background: var(--gold);
-}
-
-html[data-theme="dark"] .voice-caption {
-  color: #c3ab89;
-}
-
-html[data-theme="dark"] .voice-caption strong {
-  color: #f5ddb8;
-}
-
-html[data-theme="dark"] .small-art {
-  background: #232831;
 }
 
 html[data-theme="dark"] .zip-art {

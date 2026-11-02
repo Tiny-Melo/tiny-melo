@@ -8,11 +8,24 @@ import '../styles/global.css';
 import SiteHeader from '../components/SiteHeader.astro';
 import ThemeInit from '../components/ThemeInit.astro';
 const projects = [
-  { name: 'Melloku', type: 'Native app · iOS & macOS', status: 'In development', image: 'melloku.png', description: 'A manga and comics reader with a personal library, reading history, and a home for your next chapter.', href: '/#melloku', link: 'Project details' },
-  { name: 'Speakmelo', type: 'Native app · macOS', status: 'In development', image: 'speakmelo.png', description: 'Dictation for the Mac, with a global shortcut, custom vocabulary, and text delivery to the app you’re using.', href: '/#speakmelo', link: 'Project details' },
-  { name: 'BrewPulse', type: 'Menu bar app · macOS', status: 'Public beta', image: 'brewpulse.png', description: 'A small interface for Homebrew updates. See what needs attention and review the command before it runs.', href: 'https://github.com/ChrisRodStar/BrewPulse', link: 'View the source' },
-  { name: 'ZipMello', type: 'Developer library · Swift', status: 'Open source', image: 'zipmello.png', description: 'A ZIP and CBZ engine built for comic readers, with natural page ordering and concurrent archive reads.', href: 'https://github.com/ChrisRodStar/zipmello', link: 'View the source' },
-  { name: 'MelloRunner', type: 'Developer library · Swift', status: 'In development', image: 'mellorunner.png', description: 'An independent source runner for Melloku. The foundation checks WebAssembly headers and input limits; execution is still ahead.', href: null, link: null },
+  {
+    name: 'Melo TV',
+    type: 'Streaming suite · macOS, iOS, Web & Docker',
+    status: 'Open source',
+    image: 'melotv.svg',
+    description: 'A self-hosted streaming server and app suite for movies and TV shows. Stream directly on your Mac, iPhone, or in your browser without the popups or ads.',
+    href: 'https://github.com/ChrisRodStar/Mello-Tv',
+    link: 'View on GitHub'
+  },
+  {
+    name: 'ZipMelo',
+    type: 'Developer library · Swift 6',
+    status: 'Open source',
+    image: 'zipmelo.png',
+    description: 'A memory-safe, high-performance ZIP and CBZ engine for Swift 6, built around how comic and manga readers actually access pages.',
+    href: 'https://github.com/ChrisRodStar/zipmello',
+    link: 'View the source'
+  },
 ];
 ---
 <!doctype html>

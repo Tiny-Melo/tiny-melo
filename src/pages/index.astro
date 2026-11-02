@@ -18,7 +18,7 @@ import ThemeInit from "../components/ThemeInit.astro";
         />
         <meta
             name="description"
-            content="Tiny Melo is Christopher’s independent home for thoughtful apps, useful tools, and experiments. Explore Melloku, Speakmelo, BrewPulse, and more."
+            content="Tiny Melo is Christopher’s independent home for thoughtful apps, useful tools, and experiments. Explore Melo TV, ZipMelo, and more."
         />
         <title>Tiny Melo — Little tools. A lot of heart.</title>
         <link
@@ -76,31 +76,23 @@ import ThemeInit from "../components/ThemeInit.astro";
                 </div>
                 <div class="hero-shelf" aria-label="Projects made by Tiny Melo">
                     <a
-                        class="app-tile tile-reader"
-                        href="#melloku"
-                        aria-label="Explore Melloku"
-                        ><img src="/assets/melloku.png" alt="" /><span
-                            >Melloku</span
+                        class="app-tile tile-tv"
+                        href="#melotv"
+                        aria-label="Explore Melo TV"
+                        ><img src="/assets/melotv.svg" alt="" /><span
+                            >Melo TV</span
                         ></a
                     >
                     <a
-                        class="app-tile tile-voice"
-                        href="#speakmelo"
-                        aria-label="Explore Speakmelo"
-                        ><img src="/assets/speakmelo.png" alt="" /><span
-                            >Speakmelo</span
-                        ></a
-                    >
-                    <a
-                        class="app-tile tile-brew"
-                        href="#brewpulse"
-                        aria-label="Explore BrewPulse"
-                        ><img src="/assets/brewpulse.png" alt="" /><span
-                            >BrewPulse</span
+                        class="app-tile tile-zip"
+                        href="#zipmelo"
+                        aria-label="Explore ZipMelo"
+                        ><img src="/assets/zipmelo.png" alt="" /><span
+                            >ZipMelo</span
                         ></a
                     >
                     <div class="shelf-note">
-                        a few things<br />from my desk <span>⤴</span>
+                        two things<br />from my desk <span>⤴</span>
                     </div>
                 </div>
                 <div class="hero-bottom">
@@ -122,101 +114,49 @@ import ThemeInit from "../components/ThemeInit.astro";
                     </p>
                 </div>
                 <div class="project-grid">
-                    <article id="melloku" class="project-card reader-card wide">
+                    <article id="melotv" class="project-card tv-card wide">
                         <div class="card-copy">
                             <div class="card-meta">
-                                <span>THE READER</span><span class="status"
-                                    >In development</span>
-                            </div><h3>Melloku</h3><p>
-                                Your manga. Your pace.<br />A native home for
-                                your next chapter.
-                            </p><button class="text-link" data-project="melloku"
+                                <span>STREAMING SUITE</span><span class="status"
+                                    >Open source</span>
+                            </div><h3>Melo TV</h3><p>
+                                Movies and TV on your own server.<br />A clean, self-hosted
+                                streaming suite for Mac, iPhone, web, and Docker.
+                            </p><button class="text-link" data-project="melotv"
                                 >Take a closer look <Arrow /></button
-                            ><span class="platform">iOS & macOS</span>
+                            ><span class="platform">macOS · iOS · Web · Docker</span>
                         </div>
-                        <div class="reader-art project-art">
-                            <div class="reader-orbit"></div><img
-                                src="/assets/melloku.png"
-                                alt="Melloku’s flowing gold mark"
+                        <div class="tv-art project-art">
+                            <img
+                                src="/assets/melotv.svg"
+                                alt="Melo TV streaming display mark"
                             /><div class="art-caption">
-                                <span>ONE MORE CHAPTER.</span><span
-                                    >And then one more.</span>
+                                <span>STREAM FREELY.</span><span
+                                    >Your movies. Your server.</span>
                             </div>
                         </div>
                     </article>
-                    <article
-                        id="speakmelo"
-                        class="project-card voice-card wide"
-                    >
+                    <article id="zipmelo" class="project-card zip-card wide">
                         <div class="card-copy">
                             <div class="card-meta">
-                                <span>THE VOICE</span><span class="status"
-                                    >In development</span>
-                            </div><h3>Speakmelo</h3><p>
-                                From a thought to a sentence.<br />Dictation
-                                that lives on your Mac.
+                                <span>UNDER THE HOOD</span><span class="status"
+                                    >Open source · Swift 6</span>
+                            </div><h3>ZipMelo</h3><p>
+                                Fast, memory-safe ZIP & CBZ engine.<br />Built around how
+                                comic and manga readers actually access pages.
                             </p><button
                                 class="text-link"
-                                data-project="speakmelo"
+                                data-project="zipmelo"
                                 >Take a closer look <Arrow /></button
-                            ><span class="platform">macOS</span>
+                            ><span class="platform">Swift 6 · macOS CLI</span>
                         </div>
-                        <div class="voice-art project-art">
-                            <img
-                                class="voice-mark"
-                                src="/assets/speakmelo.png"
-                                alt="Speakmelo app mark"
-                            /><div class="waveform" aria-hidden="true">
-                                {
-                                    Array.from({ length: 29 }, (_, i) => (
-                                        <i
-                                            style={`--height: ${14 + Math.abs(Math.sin(i * 1.9)) * 48}px; --delay: ${i * 0.045}s`}
-                                        />
-                                    ))
-                                }
-                            </div><div class="voice-caption">
-                                A little less typing.<br /><strong
-                                    >A little more you.</strong>
-                            </div>
-                        </div>
-                    </article>
-                    <article id="brewpulse" class="project-card brew-card">
-                        <div class="small-art project-art">
-                            <img
-                                src="/assets/brewpulse-status.png"
-                                alt="BrewPulse’s Homebrew package status window"
-                                loading="lazy"
-                            />
-                        </div><div class="small-copy">
-                            <div class="card-meta">
-                                <span>THE DAILY HELPER</span><span
-                                    class="status">Public beta</span>
-                            </div><h3>BrewPulse</h3><p>
-                                Homebrew updates, without living in Terminal.
-                            </p><button
-                                class="text-link"
-                                data-project="brewpulse"
-                                >Explore BrewPulse <Arrow /></button>
-                        </div>
-                    </article>
-                    <article id="zipmello" class="project-card zip-card">
                         <div class="small-art zip-art project-art">
                             <img
-                                src="/assets/zipmello.png"
-                                alt="ZipMello’s golden retriever character"
+                                src="/assets/zipmelo.png"
+                                alt="ZipMelo’s golden retriever character"
                                 loading="lazy"
                             /><span class="zip-type" aria-hidden="true"
                                 >zip.<br />read.<br />repeat.</span>
-                        </div><div class="small-copy">
-                            <div class="card-meta">
-                                <span>UNDER THE HOOD</span><span class="status"
-                                    >Open source</span>
-                            </div><h3>ZipMello</h3><p>
-                                A Swift ZIP engine built for comic readers.
-                            </p><button
-                                class="text-link"
-                                data-project="zipmello"
-                                >Explore ZipMello <Arrow /></button>
                         </div>
                     </article>
                 </div>
@@ -230,10 +170,9 @@ import ThemeInit from "../components/ThemeInit.astro";
             <section class="marquee" aria-label="The Tiny Melo project family">
                 <div class="marquee-track" aria-hidden="true">
                     {
-                        [0, 1].map(() => (
+                        [0, 1, 2, 3].map(() => (
                             <span>
-                                Melloku <b>✳</b> Speakmelo <b>✳</b> BrewPulse{" "}
-                                <b>✳</b> ZipMello <b>✳</b> MelloRunner <b>✳</b>
+                                Melo TV <b>✳</b> ZipMelo <b>✳</b>{" "}
                             </span>
                         ))
                     }
@@ -287,7 +226,7 @@ import ThemeInit from "../components/ThemeInit.astro";
                     </h2>
                 </div><div class="spotlight">
                     <div class="spotlight-top">
-                        <span id="spotlight-count">01 / 03</span><div
+                        <span id="spotlight-count">01 / 02</span><div
                             class="spotlight-controls"
                         >
                             <button
@@ -302,21 +241,20 @@ import ThemeInit from "../components/ThemeInit.astro";
                     </div><div id="spotlight-content" aria-live="polite">
                         <img
                             id="spotlight-image"
-                            src="/assets/zipmello.png"
-                            alt="ZipMello mark"
+                            src="/assets/melotv.svg"
+                            alt="Melo TV mark"
                             loading="lazy"
-                        /><h3 id="spotlight-title">ZipMello</h3><p
+                        /><h3 id="spotlight-title">Melo TV</h3><p
                             id="spotlight-description"
                         >
-                            A ZIP and CBZ engine for Swift, built around how
-                            comic readers actually access pages.
+                            A self-hosted streaming server and app suite for movies and TV shows across macOS, iOS, web, and Docker.
                         </p><a
                             id="spotlight-link"
                             class="text-link"
-                            href="https://github.com/ChrisRodStar/zipmello"
+                            href="https://github.com/ChrisRodStar/Mello-Tv"
                             target="_blank"
                             rel="noreferrer"
-                            ><span>View the source</span> <Arrow /></a>
+                            ><span>View on GitHub</span> <Arrow /></a>
                     </div>
                 </div>
             </section>
@@ -351,7 +289,7 @@ import ThemeInit from "../components/ThemeInit.astro";
             <div class="dialog-shell">
                 <button class="dialog-close" aria-label="Close project details"
                     >×</button
-                ><img id="dialog-image" src="/assets/melloku.png" alt="" /><p
+                ><img id="dialog-image" src="/assets/melotv.svg" alt="" /><p
                     id="dialog-status"
                     class="eyebrow"
                 >
@@ -368,55 +306,29 @@ import ThemeInit from "../components/ThemeInit.astro";
             import { ScrollTrigger } from "gsap/ScrollTrigger";
             gsap.registerPlugin(ScrollTrigger);
             const projects = {
-                melloku: {
-                    name: "Melloku",
-                    status: "In development · iOS & macOS",
-                    image: "melloku.png",
+                melotv: {
+                    name: "Melo TV",
+                    status: "Open source · macOS, iOS, Web & Docker",
+                    image: "melotv.svg",
                     description:
-                        "A native manga and comics reader for iPhone and Mac. Built around a personal library and a comfortable reading experience.",
+                        "A self-hosted streaming server and app suite for movies and TV shows. Run it on your Mac or with Docker, and stream directly on your Mac, iPhone, or in your browser without popups or ads.",
                     features: [
-                        "Library, reading history, discovery, and search",
-                        "Local storage for reading positions and preferences",
-                        "A personal project still in development",
+                        "Self-hosted server with Docker or native Mac app support",
+                        "Native iOS and web apps with clean, ad-free playback",
+                        "Direct video streaming without tabs, popups, or fake buttons",
                     ],
-                    url: null,
+                    url: "https://github.com/ChrisRodStar/Mello-Tv",
                 },
-                speakmelo: {
-                    name: "Speakmelo",
-                    status: "In development · macOS",
-                    image: "speakmelo.png",
+                zipmelo: {
+                    name: "ZipMelo",
+                    status: "Open source · Swift 6",
+                    image: "zipmelo.png",
                     description:
-                        "A native Mac dictation app that turns speech into text and delivers it to the app you are using.",
+                        "A Swift 6 ZIP and CBZ engine built around the real-world access patterns of comic and manga readers.",
                     features: [
-                        "A global shortcut and recording overlay",
-                        "Custom vocabulary and local dictation history",
-                        "Optional text cleanup",
-                    ],
-                    url: null,
-                },
-                brewpulse: {
-                    name: "BrewPulse",
-                    status: "Public beta · macOS",
-                    image: "brewpulse.png",
-                    description:
-                        "A small menu bar app for checking and updating Homebrew packages. It shows what needs attention and lets you review the command before it runs.",
-                    features: [
-                        "See outdated formulae and casks",
-                        "Review Homebrew commands before updating",
-                        "Open-source client; current beta is unsigned",
-                    ],
-                    url: "https://github.com/ChrisRodStar/BrewPulse",
-                },
-                zipmello: {
-                    name: "ZipMello",
-                    status: "Open source · Swift",
-                    image: "zipmello.png",
-                    description:
-                        "A Swift ZIP and CBZ engine built around the access patterns of comic and manga readers.",
-                    features: [
-                        "Natural page ordering",
-                        "Concurrent, positional archive reads",
-                        "Direct in-memory archive processing",
+                        "Natural page ordering and concurrent, positional archive reads",
+                        "ZIP64, zero-copy streaming, and atomic directory writes",
+                        "ComicInfo XML support and a universal macOS CLI",
                     ],
                     url: "https://github.com/ChrisRodStar/zipmello",
                 },
@@ -473,27 +385,19 @@ import ThemeInit from "../components/ThemeInit.astro";
             );
             const spotlights = [
                 {
-                    name: "ZipMello",
-                    image: "zipmello.png",
+                    name: "Melo TV",
+                    image: "melotv.svg",
                     description:
-                        "A ZIP and CBZ engine for Swift, built around how comic readers actually access pages.",
+                        "A self-hosted streaming server and app suite for movies and TV shows across macOS, iOS, web, and Docker.",
+                    url: "https://github.com/ChrisRodStar/Mello-Tv",
+                    link: "View on GitHub",
+                },
+                {
+                    name: "ZipMelo",
+                    image: "zipmelo.png",
+                    description:
+                        "A ZIP and CBZ engine for Swift 6, built around how comic and manga readers actually access pages.",
                     url: "https://github.com/ChrisRodStar/zipmello",
-                    link: "View the source",
-                },
-                {
-                    name: "MelloRunner",
-                    image: "mellorunner.png",
-                    description:
-                        "An independent source runner for Melloku. The current foundation checks WebAssembly headers and input limits; module execution is still ahead.",
-                    url: null,
-                    link: "",
-                },
-                {
-                    name: "BrewPulse",
-                    image: "brewpulse.png",
-                    description:
-                        "A native layer over Homebrew. The command stays visible, so you can see exactly what your Mac is about to do.",
-                    url: "https://github.com/ChrisRodStar/BrewPulse",
                     link: "View the source",
                 },
             ];
@@ -503,7 +407,7 @@ import ThemeInit from "../components/ThemeInit.astro";
                     (current + delta + spotlights.length) % spotlights.length;
                 const item = spotlights[current];
                 document.querySelector("#spotlight-count")!.textContent =
-                    `0${current + 1} / 03`;
+                    `0${current + 1} / 02`;
                 document.querySelector("#spotlight-title")!.textContent =
                     item.name;
                 document.querySelector("#spotlight-description")!.textContent =
